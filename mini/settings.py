@@ -47,8 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
+
     'max',
 
 ]
@@ -179,9 +178,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 #cloudinary  settings 
-import cloudinary_storage
 import cloudinary
-
+import cloudinary_storage
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUD_NAME'),

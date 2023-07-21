@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+
 def get_current_time():
     current_time = timezone.localtime().time()
     return str(current_time)#Guard model  
