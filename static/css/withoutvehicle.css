@@ -141,42 +141,143 @@ td {
 
 /* Responsive styles */
 @media only screen and (max-width: 480px) {
-  /* Styles for smartphones */
+  .error {
+    color: red;
+  }
+  
+  .user {
+    color: lightblue;
+    text-align: center;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+  
   .form-container {
-    max-width: 90%;
-    padding: 10px;
+    max-width: 400px;
     margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
-
+  
   .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: left;
   }
-
+  
   .form-label {
-    font-size: 12px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
   }
-
+  
   input[type="text"],
   input[type="number"] {
-    font-size: 12px;
-    padding: 8px;
+    width: 80%;
+    padding: 5x;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
   }
-
+  label[for="purpose"] {
+    font-weight: bold;
+  }
+  
   .submit-btn {
-    padding: 8px 16px;
-    font-size: 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 8px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    margin-top: 10px;
+  }
+  
+  table {
+    width: 80%;
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    border: 2px solid black;
+    padding: 5px;
+  }
+  
+  th {
+    background-color: lightgray;
+  }
+  
+  td {
+    text-align: center;
+  }
+  
+  /* Specific styles for withoutvehicle.html */
+  .camera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #deleteFrontButton {
+    background-color: red;
+    color: white;
+  }
+  
+  #captureFrontButton {
+    background-color: rgb(58, 86, 209);
+    color: white;
+  }
+  
+  /* Styles for the purpose select element */
+  #purpose {
+    width: 80%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  #canvas{
+    display: none;
+    height:fit-content;
+    width:350px;
+  }
+  #startCameraButton{
+    background-color:black;
+    color:white;
+  }
+  #videoFeed{
+    display:none;
+    height:fit-content;
+    width:350px;
+  }
+  .camera{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+  }
+  
+  /*captured images */
+  #frontImage{
+    max-width: 80%;
+    margin-top: 8px;
   }
 }
-
-@media screen and (max-width: 768px) {
-  .user {
-    font-size: 24px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .user {
-    font-size: 32px;
-  }
-}
-

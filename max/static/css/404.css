@@ -1,5 +1,6 @@
 /* style.css */
 
+/* Default styles for larger screens */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -27,4 +28,22 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Media query for smartphones */
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 16px;
+    }
 }

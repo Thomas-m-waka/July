@@ -31,8 +31,8 @@ class WithVehicle(LoginRequiredMixin, TemplateView):
         phone_number = request.POST['phone_number']
         company = request.POST['company']
         purpose = request.POST['purpose']
-        id_picture_front1_base64 = request.POST['id_picture_front1']  # Get the base64-encoded front ID image data
-        id_picture_front2_base64 = request.POST['id_picture_front2']  # Get the base64-encoded back ID image data
+        idphoto_base64 = request.POST['idphoto']  # Get the base64-encoded front ID image data
+        vehiclephoto_base64 = request.POST['vehiclephoto']  # Get the base64-encoded back ID image data
 
         # Perform form validation
         errors = {}
@@ -42,18 +42,18 @@ class WithVehicle(LoginRequiredMixin, TemplateView):
             purpose = f'Other - {other_purpose}'
 
         # Decode the base64 image data and save it as a file
-        id_picture_front1 = None
-        id_picture_front2 = None
+        idphoto = None
+        vehiclephoto = None
 
-        if id_picture_front1_base64:
-            format, imgstr = id_picture_front1_base64.split(';base64,')
+        if idphoto_base64:
+            format, imgstr = idphoto_base64.split(';base64,')
             ext = format.split('/')[-1]
-            id_picture_front1 = ContentFile(base64.b64decode(imgstr), name=f"{name}_front1.{ext}")
+            idphoto = ContentFile(base64.b64decode(imgstr), name=f"{name}_idv.{ext}")
 
-        if id_picture_front2_base64:
-            format, imgstr = id_picture_front2_base64.split(';base64,')
+        if vehiclephoto_base64:
+            format, imgstr = vehiclephoto_base64.split(';base64,')
             ext = format.split('/')[-1]
-            id_picture_front2 = ContentFile(base64.b64decode(imgstr), name=f"{name}_front2.{ext}")
+            vehiclephoto = ContentFile(base64.b64decode(imgstr), name=f"{name}_vehicle.{ext}")
 
         try:
             # Create a new withvehicle object and save it to the database
@@ -65,8 +65,8 @@ class WithVehicle(LoginRequiredMixin, TemplateView):
                 company=company,
                 purpose=purpose,
                 time_in=timezone.localtime().time(),
-                id_picture_front1=id_picture_front1,
-                id_picture_front2=id_picture_front2
+                idphoto=idphoto,
+                vehiclephoto=vehiclephoto
             )
 
             # Notify the user about successful submission
@@ -104,7 +104,7 @@ class WithoutVehicle(LoginRequiredMixin, TemplateView):
         phone_number = request.POST['phone_number']
         company = request.POST['company']
         purpose = request.POST['purpose']
-        id_picture_front_base64 = request.POST['id_picture_front']  # Get the base64-encoded front image data
+        idphoto_base64 = request.POST['idphoto']  # Get the base64-encoded front image data
         
         # Perform form validation
         errors = {}
@@ -113,16 +113,16 @@ class WithoutVehicle(LoginRequiredMixin, TemplateView):
             other_purpose = request.POST['other_purpose']
             purpose = f'Other - {other_purpose}'
 
-        if not id_picture_front_base64:
-            errors['id_picture_front'] = 'Please capture the front ID picture.'
+        if not idphoto_base64:
+            errors['idphoto'] = 'Please capture the front ID picture.'
 
         # Decode the base64 image data and save it as a file
-        if id_picture_front_base64:
-            format, imgstr = id_picture_front_base64.split(';base64,')  # Extract the format and base64 data
+        if idphoto_base64:
+            format, imgstr = idphoto_base64.split(';base64,')  # Extract the format and base64 data
             ext = format.split('/')[-1]  # Extract the file extension
-            id_picture_front = ContentFile(base64.b64decode(imgstr), name=f"{name}_front.{ext}")  # Create a ContentFile with decoded data
+            idphoto = ContentFile(base64.b64decode(imgstr), name=f"{name}_front.{ext}")  # Create a ContentFile with decoded data
         else:
-            id_picture_front = None
+            idphoto = None
 
         # ...
 
@@ -134,7 +134,7 @@ class WithoutVehicle(LoginRequiredMixin, TemplateView):
                 phone_number=phone_number,
                 company=company,
                 purpose=purpose,
-                id_picture_front=id_picture_front,
+                idphoto=idphoto,
                 time_in=timezone.localtime().time()
             )
 
@@ -216,7 +216,7 @@ class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
         security_guard_name = request.POST.get('security_guard_name')
 
         # Retrieve the file from the request
-        id_picture_front = request.FILES.get('id_picture_front')
+        idphoto = request.FILES.get('idphoto')
 
         # Create a new WithoutVehicle object and save it to the database
         without_vehicle = withoutvehicle.objects.create(
@@ -226,7 +226,7 @@ class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
             company=company,
             purpose=purpose,
             security_guard_name=security_guard_name,
-            id_picture_front=id_picture_front,  # Associate the file with the attribute
+            idphoto=idphoto,  # Associate the file with the attribute
             time_in=timezone.localtime().time()
         )
 

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var phoneNumberInput = document.querySelector('input[name="phone_number"]');
     var companyInput = document.querySelector('input[name="company"]');
     var purposeSelect = document.getElementById("purpose");
-    var imageInput = document.getElementById("id_picture_front");
+    var imageInput = document.getElementById("idphoto");
 
     var errors = [];
 

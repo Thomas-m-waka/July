@@ -99,72 +99,103 @@
 }
 
 @media screen and (max-width: 480px) {
-  .container {
-    text-align: left;
+  
+  #success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7ED321;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
   }
-
-  .logout-container {
+  
+  .container {
     text-align: center;
+  }
+  
+  .logout-container {
+    text-align: right;
     margin-bottom: 10px;
   }
-
+  
+  .login-button {
+    padding: 8px 12px;
+    background-color: #ff6f00; /* Bright Orange */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+  }
   .logout-button {
     color: white;
     background-color: red;
-    display: none;
   }
-
+  
   .registration-heading {
     color: blue;
   }
-
+  
   .centered {
     text-align: center;
   }
-
+  
   .Entry {
     visibility: visible;
   }
-
+  
   .button {
-    display: block;
-    width: 100%;
-    padding: 10px 20px;
-    margin: 10px 0;
+    display: inline-block;
+    padding:8px 12px;
+    margin: 6px;
     border-radius: 5px;
     color: white;
     font-weight: bold;
     text-decoration: none;
   }
-
+  
   #userButton {
     background-color: green;
   }
-
+  
   #visitorButton {
     background-color: green;
   }
-
+  
   .exit {
     margin-top: 20px;
     font-weight: bold;
   }
-
+  
   #exitWithVehicleButton {
     background-color: purple;
   }
-
+  
   #exitWithoutVehicleButton {
     background-color: purple;
   }
-
+  
   .button:hover {
     text-decoration: none;
   }
-
+  
   .button:active {
     position: relative;
     top: 1px;
   }
+  
+  /* Success message styles */
+  .success-message {
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
 }
-

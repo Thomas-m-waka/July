@@ -7,7 +7,7 @@ header {
   padding: 5px;
   text-align: left;
   text-decoration: none;
-  display: flex;
+  display:block;
   align-items: center;
   justify-content: center;
 }
@@ -18,7 +18,7 @@ header {
   height: 150px;
   color: rgb(12, 14, 14);
   text-align: left;
-  display: flex;
+  display: block;
   align-items: center;
   padding: 5px;
 }
@@ -85,31 +85,34 @@ footer {
 
 /* Media Queries */
 @media only screen and (max-width: 480px) {
-  /* Styles for mobile devices */
+ 
+header {
+  background-color: white;
+  color: white;
+  height: 150px;
+  width: auto;
+  padding: 3px;
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  /* Reset header height */
-  header {
-    height: auto;
-  }
+.logo {
+  background-color: white;
+  width: auto;
+  height: 100px;
+  color: rgb(12, 14, 14);
+  text-align: left;
+  display:block;
+  align-items: center;
+  padding: 5px;
+}
 
-  .logo {
-    height: 80px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .logo img {
-    max-height: 80px;
-    padding: 5px;
-  }
-
-  /* Reduce container padding */
-  .container {
-    padding: 10px;
-  }
-
-  /* Reduce footer padding */
-  footer {
-    padding: 10px;
-  }
+.logo img {
+  max-height: 80px;
+  padding: 20px;
+  opacity: 1;
+}
 }

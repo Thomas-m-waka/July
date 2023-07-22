@@ -87,8 +87,8 @@
                         <canvas id="canvas1" style="display: none;"></canvas>
                         <img id="frontImage1" src="" alt="ID Photo">
                         <button type="button" id="deleteFrontButton1">Delete ID Photo</button>
-                        <input type="hidden" id="id_picture_front1" name="id_picture_front1" required>
-                        <span id="id_picture_front1-error" class="error"></span>
+                        <input type="hidden" id="idphoto" name="idphoto" required>
+                        <span id="idphoto-error" class="error"></span>
                      </div>
                   </div>
                </div>
@@ -102,8 +102,8 @@
                         <canvas id="canvas2" style="display: none;"></canvas>
                         <img id="frontImage2" src="" alt="Vehicle Photo">
                         <button type="button"id="deleteFrontButton2">Delete Vehicle Photo</button>
-                        <input type="hidden" id="id_picture_front2" name="id_picture_front2" required>
-                        <span id="id_picture_front2-error" class="error"></span>
+                        <input type="hidden" id="vehiclephoto" name="vehiclephoto" required>
+                        <span id="vehiclephoto-error" class="error"></span>
                      </div>
                   </div>
                </div>
@@ -142,7 +142,7 @@
 
    // Capture ID photo
    document.getElementById('captureFrontButton1').addEventListener('click', function() {
-     capturePhoto('id_picture_front1', frontImage1, 1);
+     capturePhoto('idphoto', frontImage1, 1);
      document.getElementById('captureFrontButton1').style.display = 'none';
      deleteFrontButton1.style.display = 'inline-block';
      stopCamera(1);
@@ -150,7 +150,7 @@
 
    // Delete ID photo
    deleteFrontButton1.addEventListener('click', function() {
-     deletePhoto(frontImage1, 'id_picture_front1', deleteFrontButton1, 1);
+     deletePhoto(frontImage1, 'idphoto', deleteFrontButton1, 1);
      document.getElementById('captureFrontButton1').style.display = 'inline-block';
      deleteFrontButton1.style.display = 'none';
      activateCamera(1);
@@ -169,7 +169,7 @@
 
    // Capture vehicle photo
    document.getElementById('captureFrontButton2').addEventListener('click', function() {
-     capturePhoto('id_picture_front2', frontImage2, 2);
+     capturePhoto('vehiclephoto', frontImage2, 2);
      document.getElementById('captureFrontButton2').style.display = 'none';
      deleteFrontButton2.style.display = 'inline-block';
      stopCamera(2);
@@ -177,7 +177,7 @@
 
    // Delete vehicle photo
    deleteFrontButton2.addEventListener('click', function() {
-     deletePhoto(frontImage2, 'id_picture_front2', deleteFrontButton2, 2);
+     deletePhoto(frontImage2, 'vehiclephoto', deleteFrontButton2, 2);
      document.getElementById('captureFrontButton2').style.display = 'inline-block';
      deleteFrontButton2.style.display = 'none';
      activateCamera(2);

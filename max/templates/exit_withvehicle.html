@@ -50,12 +50,12 @@
             {% if user.is_superuser and user.is_authenticated %}
               <td>
                 <div class="zoomable-container">
-                  <img src="{{ withvehicle.id_picture_front1.url }}" class="zoomable-image" height="20px" width="20px">
+                  <img src="{{ withvehicle.idphoto.url }}" class="zoomable-image" height="20px" width="20px">
                 </div>
               </td>
               <td>
                 <div class="zoomable-container">
-                  <img src="{{ withvehicle.id_picture_front2.url }}" class="zoomable-image" height="20px" width="20px">
+                  <img src="{{ withvehicle.vehiclephoto.url }}" class="zoomable-image" height="20px" width="20px">
                 </div>
               </td>
             {% endif %}

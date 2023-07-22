@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var vehicleRegistrationInput = document.querySelector('input[name="vehicle_registration"]');
     var phoneNumberInput = document.querySelector('input[name="phone_number"]');
     var companyInput = document.querySelector('input[name="company"]');
-    var idPictureFrontInput = document.querySelector('input[name="id_picture_front1"]');
-    var vehiclePictureInput = document.querySelector('input[name="id_picture_front2"]');
+    var idPictureFrontInput = document.querySelector('input[name="idphoto"]');
+    var vehiclePictureInput = document.querySelector('input[name="vehiclephoto"]');
 
     var errors = [];
 
