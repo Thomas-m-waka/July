@@ -1,115 +1,96 @@
+/* Add styles for flash messages */
+.messages {
+  margin: 10px 0;
+}
 
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.message.success {
+  background-color: #dff0d8;
+  color: #279b28;
+}
+
+/* Add styles for the header */
 header {
-  background-color: white;
-  color: white;
-  height: 200px;
-  width: auto;
-  padding: 5px;
-  text-align: left;
-  text-decoration: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.logo {
-  background-color: white;
-  width: auto;
-  height: 150px;
-  color: rgb(12, 14, 14);
-  text-align: left;
-  display: flex;
   align-items: center;
-  padding: 5px;
+  padding-top :2px;
+  padding-bottom: 20px;
+  background-color:white;
+  
 }
 
-.logo img {
-  max-height: 150px;
-  padding: 20px;
-  opacity: 1;
+/*.logo img {
+  margin: 10px;
+  height:auto;
+  width: 300px; Set the fixed width of the smallest image 
+  padding-top:5px;
+  padding-right:5px;
+  padding-bottom: 20px;; /* Padding for each image 
+}*/
+
+.logo .minimax{
+  margin:4px;
+  width:250px;
+  height:auto;
+  padding-top: 2px;
+  padding-left:10px;
+  padding-bottom:92px;
+  
+
+}
+.logo .star {
+  margin: 4px;
+  width: 40px; /* Set the fixed width of the second image */
+  padding-bottom:92px;
+  padding-top:2px;
+  
+   /* Padding for each image */
 }
 
-/* Responsive Styles */
+.logo .starr {
+  margin: 4px;
+  width: 300px;
+  height:auto; /* Set the fixed width of the largest image */
+  padding-top:2px;
+  padding-bottom:10px;
+
+   /* Padding for each image */
+}
+
+
+/* Media queries for responsive design */
 @media screen and (max-width: 768px) {
-  .logo {
-    height: 100px;
-  }
-
   .logo img {
-    max-height: 100px;
-    padding: 10px;
+    width: 80px; /* Adjust the width of the smallest image for small screens */
+   padding-bottom:20px;
+   padding-top:2px;
+    /* Adjust padding for small screens */
+  }
+  .logo .minimax{
+    width:160px;
+    height:auto;
+    padding-top:2px;
+    padding-bottom:66px;
   }
 
-  /* Reset header height */
-  header {
-    height: auto;
-  }
-}
-
-/* CSS for base.html */
-
-/* Reset some default styles */
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
-/* Set a minimum height for the viewport */
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Create a wrapper to push footer to the bottom */
-.wrapper {
-  flex: 1;
-  background-color: white; /* Add your desired background color here */
-}
-
-/* Main content styles */
-.container {
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Footer styles */
-footer {
-  padding: 20px;
-  text-align: center;
-  background-color: #f2f2f2;
-  border-top: 1px solid #ddd;
-  margin-top: auto;
-}
-
-/* Media Queries */
-@media only screen and (max-width: 480px) {
-  /* Styles for mobile devices */
-
-  /* Reset header height */
-  header {
-    height: auto;
+  .logo .star {
+    width: 30px; /* Adjust the width of the second image for small screens */
+    padding-top:2px;
+    padding-bottom:66px;
+     /* Adjust padding for small screens */
   }
 
-  .logo {
-    height: 80px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .logo img {
-    max-height: 80px;
-    padding: 5px;
-  }
-
-  /* Reduce container padding */
-  .container {
-    padding: 10px;
-  }
-
-  /* Reduce footer padding */
-  footer {
-    padding: 10px;
+  .logo .starr {
+    width: 200px; /* Adjust the width of the largest image for small screens */
+    padding-top:2px;
+    padding-bottom:4px;
+     /* Adjust padding for small screens */
   }
 }
+/* Media queries for responsive design */

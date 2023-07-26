@@ -60,7 +60,7 @@
               </td>
             {% endif %}
             <td>
-              {% if not withvehicle.time_updated %}
+              {% if not withvehicle.Exit %}
                 <form action="{% url 'update_withvehicle_time_out' withvehicle.id %}" method="POST">
                   {% csrf_token %}
                   <button type="submit">Exit</button>

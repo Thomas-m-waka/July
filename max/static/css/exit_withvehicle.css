@@ -93,10 +93,10 @@ td {
   height: 200px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   /* Styles for smartphones */
   .form-container {
-    max-width: 90%;
+    max-width: 100%;
     padding: 10px;
     margin: 0 auto;
   }
@@ -118,8 +118,20 @@ td {
   .submit-btn {
     padding: 8px 16px;
     font-size: 12px;
-  }}
+  }
+}
 
 
 
 
+.button {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}

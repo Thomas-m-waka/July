@@ -158,7 +158,7 @@ class UpdateWithVehicleTimeOutView(LoginRequiredMixin, View):
         try:
             with_vehicle = withvehicle.objects.get(id=withvehicle_id)
             with_vehicle.time_out = timezone.localtime().time()
-            with_vehicle.time_updated = True
+            with_vehicle.Exit = True
             with_vehicle.save()
 
             # Add success message
@@ -177,7 +177,7 @@ class UpdateWithoutVehicleTimeOutView(LoginRequiredMixin, View):
         withoutvehicle_id = kwargs['withoutvehicle_id']
         without_vehicle = withoutvehicle.objects.get(id=withoutvehicle_id)
         without_vehicle.time_out = timezone.localtime().time()
-        without_vehicle.time_updated = True
+        without_vehicle.Exit = True
         without_vehicle.save()
 
         if without_vehicle.time_out is not None:

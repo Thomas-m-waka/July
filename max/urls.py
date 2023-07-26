@@ -6,7 +6,7 @@ from . import views
 from .views import ExitWithoutVehicle,ExitWithVehicle
 from django.conf.urls.static import static
 from django.conf import settings
-
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
 path("",HomePageView.as_view(),name="home"),

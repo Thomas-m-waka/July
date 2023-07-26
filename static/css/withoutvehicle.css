@@ -68,25 +68,6 @@ label[for="purpose"] {
   margin-top: 20px;
 }
 
-table {
-  width: 100%;
-  border: 2px solid black;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 2px solid black;
-  padding: 5px;
-}
-
-th {
-  background-color: lightgray;
-}
-
-td {
-  text-align: center;
-}
 
 /* Specific styles for withoutvehicle.html */
 .camera {
@@ -140,144 +121,243 @@ td {
 }
 
 /* Responsive styles */
-@media only screen and (max-width: 480px) {
-  .error {
-    color: red;
-  }
-  
-  .user {
-    color: lightblue;
-    text-align: center;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    font-size: 10px;
-    cursor: pointer;
-  }
-  
-  .form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  .form-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 3px;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    width: 80%;
-    padding: 5x;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    box-sizing: border-box;
-  }
-  label[for="purpose"] {
-    font-weight: bold;
-  }
-  
-  .submit-btn {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 8px;
-    cursor: pointer;
-    border-radius: 2px;
-  }
-  
-  .table-container {
-    overflow-x: auto;
-    margin-top: 10px;
-  }
-  
-  table {
-    width: 80%;
-    border: 2px solid black;
-    border-collapse: collapse;
-  }
-  
-  th,
-  td {
-    border: 2px solid black;
-    padding: 5px;
-  }
-  
-  th {
-    background-color: lightgray;
-  }
-  
-  td {
-    text-align: center;
-  }
-  
-  /* Specific styles for withoutvehicle.html */
-  .camera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #deleteFrontButton {
-    background-color: red;
-    color: white;
-  }
-  
-  #captureFrontButton {
-    background-color: rgb(58, 86, 209);
-    color: white;
-  }
-  
-  /* Styles for the purpose select element */
-  #purpose {
-    width: 80%;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-  }
-  #canvas{
-    display: none;
-    height:fit-content;
-    width:350px;
-  }
-  #startCameraButton{
-    background-color:black;
-    color:white;
-  }
-  #videoFeed{
-    display:none;
-    height:fit-content;
-    width:350px;
-  }
-  .camera{
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-  }
-  
-  /*captured images */
-  #frontImage{
-    max-width: 80%;
-    margin-top: 8px;
-  }
+
+@media screen and (max-width: 768px){
+    /* Styles for smartphones */.error {
+      color: red;
+    }
+    
+    input.error {
+      border-color: red;
+    }
+    .user {
+      color: rgb(182, 214, 224);
+      text-align: center;
+    }
+    .button {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        font-size: 10px;
+        cursor: pointer;
+      }
+      .home{
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      
+      .form-container {
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      
+      .form-group {
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      
+      .form-label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
+      
+      input[type="text"],
+      input[type="number"] {
+        width:100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      .submit-btn {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        font-size: 12px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      
+      .table-container {
+        overflow-x: none;
+        margin-top: 15px;
+      }
+     
+    
+    /* Purpose label */
+    label[for="purpose"] {
+      font-weight: bold;
+    }
+    
+    /* Other purpose container */
+    #other-purpose-container {
+      display: none;
+    }
+    
+    /* Other purpose label */
+    label[for="other_purpose"] {
+      font-weight: bold;
+    }
+    
+    /* Other purpose input */
+    #other_purpose {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* ID camera container */
+    #cameraContainer1 {
+      text-align: center;
+    }
+    
+    /* Vehicle camera container */
+    #cameraContainer2 {
+      text-align: center;
+      border-color: #4CAF50;
+    }
+    
+    /* Start camera buttons */
+    #startCameraButton1,
+    #startCameraButton2 {
+      background-color: black;
+      color: white;
+    }
+    
+    /* Video feeds */
+    #videoFeed1,
+    #videoFeed2 {
+      display: none;
+      height:fit-content;
+      width: 350px;
+    }
+    
+    /* Capture buttons */
+    #captureFrontButton1,
+    #captureFrontButton2 {
+      background-color: rgb(51, 88, 190);
+      color: white;
+    }
+    
+    /* Canvases */
+    #canvas1,
+    #canvas2 {
+      display: none;
+      height:fit-content;
+      width:350px;
+    }
+    
+    /* Captured images */
+    #frontImage1,
+    #frontImage2 {
+      
+      margin-top: 8px;
+    }
+    
+    /* Delete buttons */
+    #deleteFrontButton1,
+    #deleteFrontButton2 {
+      background-color: red;
+      color: white;
+    }
+    
+    /* Hidden inputs */
+    #idphoto
+     {
+      display: none;
+      text-decoration: wavy;
+      text-align: center;
+    }
+    
+    .camera {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* CSS for the purpose select element */
+    #purpose {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    
+    
+    }
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Specific styles for withoutvehicle.html */
+.camera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#deleteFrontButton {
+  background-color: red;
+  color: white;
+}
+
+#captureFrontButton {
+  background-color: rgb(58, 86, 209);
+  color: white;
+}
+
+/* Styles for the purpose select element */
+#purpose {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#canvas{
+  display: none;
+  height:fit-content;
+  width:400px;
+}
+#startCameraButton{
+  background-color:black;
+  color:white;
+}
+#videoFeed{
+  display:none;
+  height:fit-content;
+  width:400px;
+}
+.camera{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+/*captured images */
+#frontImage{
+  max-width: 100%;
+  margin-top: 10px;
 }

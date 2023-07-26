@@ -21,7 +21,8 @@
    </style>
 </head>
 <body>
-  <a href="{% url 'home' %}" class="button">Back home</a>
+  <div class="home"><a href="{% url 'home' %}">Back home</a></div>
+  
   <div class="container">
    <form method="post" action="{% url 'withoutvehicle' %}" enctype="multipart/form-data">
         {% csrf_token %}

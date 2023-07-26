@@ -31,19 +31,34 @@ a:hover {
 }
 
 /* Media query for smartphones */
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .container {
-        max-width: 90%;
-        padding: 10px;
-        border-radius: 0;
+        
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
-
+    
     h1 {
-        font-size: 28px;
-        margin-bottom: 15px;
+        font-size: 20px;
+        margin-bottom: 12px;
     }
-
+    
     p {
-        font-size: 16px;
+        font-size: 14px;
+        line-height: 2.5;
     }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
 }

@@ -20,9 +20,22 @@ from django.conf.urls import handler404
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
+from django.contrib.auth import views as auth_views
+
+
 urlpatterns = [
-    path('Rak/admin/', admin.site.urls),
+    
     path("accounts/", include("django.contrib.auth.urls")),
+
+      path('Rak/admin/', admin.site.urls),
+    # Other URL patterns...
+    path('Rak/admin/password_reset/', auth_views.PasswordResetView.as_view(), name='admin_password_reset'),
+    path('Rak/admin/password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('Rak/admin/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('Rak/admin/reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    # The catch-all pattern should be placed at the end
+    
+
     path("accounts/", include("max.urls")),
     path('',include('max.urls')),
     path('media/',serve,{'document_root':settings.MEDIA_ROOT}),

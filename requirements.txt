@@ -10,6 +10,7 @@ django-cloudinary-storage==0.3.0
 django-dotenv==1.4.2
 django-environ==0.10.0
 django-imagekit==4.1.0
+easy-thumbnails==2.8.5
 gunicorn==21.0.1
 idna==3.4
 packaging==23.1

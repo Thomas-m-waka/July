@@ -24,7 +24,7 @@ load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =os.getenv("DEBUG", False) == "True"
+DEBUG = os.getenv("DEBUG", False) == "True"
 
 ALLOWED_HOSTS = ['*']
 
@@ -34,7 +34,6 @@ SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', 'False') == 'True'
 SECURE_HSTS_SECONDS = int(os.environ.get('SECURE_HSTS_SECONDS', 0))
 SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS', 'False') == 'True'
 SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', 'False') == 'True'
-
 
 
 
@@ -49,7 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
+    'easy_thumbnails',
     'max',
+    
+    
 
 ]
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -91,7 +93,7 @@ WSGI_APPLICATION = 'mini.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 import dj_database_url
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE'),
@@ -102,7 +104,7 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT'),
     }
 }
-'''# settings.py
+# settings.py
 
 import os
 import dj_database_url
@@ -117,6 +119,13 @@ DATABASES = {
 
 
 
+
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite',
+      
+    }
+}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -195,3 +204,16 @@ CLOUDINARY_STORAGE = {
 
 #CLOUDINARY  STORAGE 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
+
+# settings.py
+#EMAIL CONFIGURATIONS 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')  
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT'))  
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS') 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

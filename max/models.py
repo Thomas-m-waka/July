@@ -9,33 +9,35 @@ def get_current_time():
 
 #model  for without vehicle regitsration 
 class withoutvehicle(models.Model):
-    id_number = models.CharField(max_length=10)
     name = models.CharField(max_length=100)
+    id_number = models.CharField(max_length=10)
+    
     phone_number = models.CharField(max_length=15)
     company = models.CharField(max_length=100)
     purpose = models.CharField(max_length=100)
-    idphoto = models.ImageField(null=True,blank=True,upload_to="Idphotowithoutvehicle/")  # Store the front ID picture as a base64 string
     time_in = models.TimeField(default=get_current_time)
     time_out = models.TimeField(null=True, blank=True)
     today = models.DateField(auto_now_add=True)
-    time_updated = models.BooleanField(default=False)
+    idphoto = models.ImageField(null=True,blank=True,upload_to="Idphotowithoutvehicle/")  # Store the front ID picture as a base64 string
+    Exit = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
  # model for the people with vehicle        
-class withvehicle(models.Model):        
+class withvehicle(models.Model):  
+    name = models.CharField(max_length=100)      
     id_number = models.CharField(max_length=10)
-    name = models.CharField(max_length=100)
-    vehicle_registration = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=15)
+    vehicle_registration = models.CharField(max_length=20)
     company = models.CharField(max_length=100)
     purpose = models.CharField(max_length=100)
     time_in = models.TimeField(default=get_current_time)
     time_out = models.TimeField(null=True)
     today = models.DateField(auto_now_add=True)
-    time_updated = models.BooleanField(default=False)
     idphoto = models.ImageField(null=True,blank=True,upload_to="IDphotowithvehicle/") 
     vehiclephoto = models.ImageField(null=True,blank=True,upload_to="Vehiclephoto/") 
+    Exit = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.name   
