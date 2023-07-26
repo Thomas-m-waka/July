@@ -213,7 +213,7 @@ class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
         phone_number = request.POST.get('phone_number')
         company = request.POST.get('company')
         purpose = request.POST.get('purpose')
-        security_guard_name = request.POST.get('security_guard_name')
+        
 
         # Retrieve the file from the request
         idphoto = request.FILES.get('idphoto')
@@ -225,7 +225,6 @@ class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
             phone_number=phone_number,
             company=company,
             purpose=purpose,
-            security_guard_name=security_guard_name,
             idphoto=idphoto,  # Associate the file with the attribute
             time_in=timezone.localtime().time()
         )
@@ -254,7 +253,8 @@ class ExitWithVehicle(LoginRequiredMixin, TemplateView):
         phone_number = request.POST['phone_number']
         company = request.POST['company']
         purpose = request.POST['purpose']
-        security_guard_name = request.POST['security_guard_name']
+        idphoto = request.FILES.get('idphoto')
+        vehiclephoto=request.FILES.get('vehiclephoto')
 
         try:
             # Create a new withvehicle object and save it to the database
@@ -265,7 +265,8 @@ class ExitWithVehicle(LoginRequiredMixin, TemplateView):
                 phone_number=phone_number,
                 company=company,
                 purpose=purpose,
-                security_guard_name=security_guard_name,
+                idphoto=idphoto,
+                vehiclephoto=vehiclephoto,
                 time_in=timezone.localtime().time()
             )
 
