@@ -19,53 +19,78 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background-color: #f1f1f1;
+  padding-top :2px;
+  padding-bottom: 20px;
+  background-color:white;
+  
 }
 
-.logo img {
+/*.logo img {
   margin: 10px;
-  width: 100px; /* Set the fixed width of the smallest image */
-  padding: 10px; /* Padding for each image */
-}
+  height:auto;
+  width: 300px; Set the fixed width of the smallest image 
+  padding-top:5px;
+  padding-right:5px;
+  padding-bottom: 20px;; /* Padding for each image 
+}*/
 
+.logo .minimax{
+  margin:4px;
+  width:250px;
+  height:auto;
+  padding-top: 2px;
+  padding-left:10px;
+  padding-bottom:92px;
+  
+
+}
 .logo .star {
-  margin: 10px;
-  width: 150px; /* Set the fixed width of the second image */
-  padding: 15px; /* Padding for each image */
+  margin: 4px;
+  width: 40px; /* Set the fixed width of the second image */
+  padding-bottom:92px;
+  padding-top:2px;
+  
+   /* Padding for each image */
 }
 
 .logo .starr {
-  margin: 10px;
-  width: 200px; /* Set the fixed width of the largest image */
-  padding: 20px; /* Padding for each image */
+  margin: 4px;
+  width: 300px;
+  height:auto; /* Set the fixed width of the largest image */
+  padding-top:2px;
+  padding-bottom:10px;
+
+   /* Padding for each image */
 }
 
-/* Add styles for the footer */
-footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
 
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {
   .logo img {
     width: 80px; /* Adjust the width of the smallest image for small screens */
-    padding: 5px; /* Adjust padding for small screens */
+   padding-bottom:20px;
+   padding-top:2px;
+    /* Adjust padding for small screens */
+  }
+  .logo .minimax{
+    width:160px;
+    height:auto;
+    padding-top:2px;
+    padding-bottom:66px;
   }
 
   .logo .star {
-    width: 120px; /* Adjust the width of the second image for small screens */
-    padding: 10px; /* Adjust padding for small screens */
+    width: 30px; /* Adjust the width of the second image for small screens */
+    padding-top:2px;
+    padding-bottom:66px;
+     /* Adjust padding for small screens */
   }
 
   .logo .starr {
-    width: 160px; /* Adjust the width of the largest image for small screens */
-    padding: 15px; /* Adjust padding for small screens */
+    width: 200px; /* Adjust the width of the largest image for small screens */
+    padding-top:2px;
+    padding-bottom:4px;
+     /* Adjust padding for small screens */
   }
 }
+/* Media queries for responsive design */

@@ -134,8 +134,8 @@ class WithoutVehicle(LoginRequiredMixin, TemplateView):
                 phone_number=phone_number,
                 company=company,
                 purpose=purpose,
+                time_in=timezone.localtime().time(),
                 idphoto=idphoto,
-                time_in=timezone.localtime().time()
             )
 
             # Notify the user about successful submission

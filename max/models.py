@@ -11,7 +11,6 @@ def get_current_time():
 class withoutvehicle(models.Model):
     name = models.CharField(max_length=100)
     id_number = models.CharField(max_length=10)
-    
     phone_number = models.CharField(max_length=15)
     company = models.CharField(max_length=100)
     purpose = models.CharField(max_length=100)

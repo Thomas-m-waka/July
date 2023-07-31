@@ -21,13 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 from  dotenv import load_dotenv
 load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'sduisduielrfar894397#'#sos.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", False) == "True"
+DEBUG = False# os.getenv("DEBUG", False) == "True"
 
 ALLOWED_HOSTS = ['*']
-
+'''
 CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE', 'False') == 'True'
 SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE', 'False') == 'True'
 SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', 'False') == 'True'
@@ -35,7 +35,7 @@ SECURE_HSTS_SECONDS = int(os.environ.get('SECURE_HSTS_SECONDS', 0))
 SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS', 'False') == 'True'
 SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', 'False') == 'True'
 
-
+'''
 
 # Application definition
 
@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
+   # 'cloudinary_storage',
+    #'cloudinary',
     'easy_thumbnails',
     'max',
     
@@ -105,7 +105,7 @@ DATABASES = {
     }
 }
 # settings.py
-
+'''
 import os
 import dj_database_url
 
@@ -117,15 +117,8 @@ DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
+'''
 
-
-
-'''DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite',
-      
-    }
-}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -185,11 +178,10 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 # settings.py
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+'''
 
 import cloudinary
 import cloudinary_storage
@@ -216,4 +208,4 @@ EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = int(os.environ.get('EMAIL_PORT'))  
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS') 
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')'''
