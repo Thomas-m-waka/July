@@ -10,6 +10,9 @@
       <div class="logout-container">
         <a href="{% url 'logout' %}" class="button logout-button">Log Out</a>
       </div>
+      <!-- Your template.html -->
+       <p>Session will expire in {{ SESSION_EXPIRE_SECONDS|timeuntil:"H:i:s" }}</p>
+
       <h3 class="registration-heading">SECURITY REGISTRATION</h3>
       </div>
       <div class="centered">
