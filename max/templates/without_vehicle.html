@@ -21,38 +21,37 @@
    </style>
 </head>
 <body>
-  <div class="home"><a href="{% url 'home' %}">Back home</a></div>
-  
+  <a href="{% url 'home' %}" class="button">Back home</a>
   <div class="container">
    <form method="post" action="{% url 'withoutvehicle' %}" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="form-container">
           <div class="form-group">
-            <label for="name" class="form-label">Name:</label>
+            <label for="name" class="form-label">Name</label>
             <input type="text" name="name" placeholder="Enter Your Name" class="form-input" required>
             <span id="name-error" class="error"></span>
          </div>
          
          <div class="form-group">
-            <label for="id_number" class="form-label">ID Number:</label>
+            <label for="id_number" class="form-label">ID Number</label>
             <input type="number" name="id_number" placeholder="ID Number" class="form-input" required>
             <span id="id_number-error" class="error"></span>
          </div>
          
          <div class="form-group">
-            <label for="phone_number" class="form-label">Phone Number:</label>
+            <label for="phone_number" class="form-label">Phone Number</label>
             <input type="number" name="phone_number" placeholder="Phone Number" class="form-input" required>
             <span id="phone_number-error" class="error"></span>
          </div>
          
            <div class="form-group">
-              <label for="company" class="form-label">Company:</label>
+              <label for="company" class="form-label">Company</label>
               <input type="text" name="company" placeholder="Company" class="form-input" required>
            </div>
            <div class="form-group">
               <div>
-                <label for="purpose">Purpose:</label>
+                <label for="purpose">Purpose</label>
                 <select id="purpose" name="purpose" class="form-input" required>
                   <option value="" selected disabled>Select Purpose</option>
                   <option value="Work">Work</option>
@@ -65,7 +64,7 @@
               </div>
               
               <div id="other-purpose-container" style="display: none;">
-                <label for="other_purpose">Please specify:</label>
+                <label for="other_purpose">Please specify</label>
                 <input type="text" id="other_purpose" name="other_purpose" placeholder="Please specify">
               </div>
            </div>

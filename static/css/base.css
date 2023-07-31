@@ -36,7 +36,7 @@ header {
 
 .logo .minimax{
   margin:4px;
-  width:250px;
+  max-width:250px;
   height:auto;
   padding-top: 2px;
   padding-left:10px;
@@ -46,7 +46,7 @@ header {
 }
 .logo .star {
   margin: 4px;
-  width: 40px; /* Set the fixed width of the second image */
+  max-width: 40px; /* Set the fixed width of the second image */
   padding-bottom:92px;
   padding-top:2px;
   
@@ -55,7 +55,7 @@ header {
 
 .logo .starr {
   margin: 4px;
-  width: 300px;
+  max-width: 300px;
   height:auto; /* Set the fixed width of the largest image */
   padding-top:2px;
   padding-bottom:10px;
