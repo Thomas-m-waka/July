@@ -69,25 +69,25 @@ header {
   .logo img {
     width: 80px; /* Adjust the width of the smallest image for small screens */
    padding-bottom:20px;
-   padding-top:2px;
+   padding-top:1%;
     /* Adjust padding for small screens */
   }
   .logo .minimax{
-    width:160px;
+    width:30%;
     height:auto;
     padding-top:2px;
-    padding-bottom:66px;
+    padding-bottom:14%;
   }
 
   .logo .star {
-    width: 30px; /* Adjust the width of the second image for small screens */
+    width: 7%; /* Adjust the width of the second image for small screens */
     padding-top:2px;
-    padding-bottom:66px;
+    padding-bottom:14%;
      /* Adjust padding for small screens */
   }
 
   .logo .starr {
-    width: 200px; /* Adjust the width of the largest image for small screens */
+    width: 40%; /* Adjust the width of the largest image for small screens */
     padding-top:2px;
     padding-bottom:4px;
      /* Adjust padding for small screens */
