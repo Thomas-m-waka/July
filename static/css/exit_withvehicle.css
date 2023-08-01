@@ -75,7 +75,6 @@ td {
   text-align: center;
 }
 
-
 .zoomable-container {
   position: relative;
   display: inline-block;
@@ -93,8 +92,8 @@ td {
   height: 200px;
 }
 
+/* Styles for tablets and smaller screens */
 @media only screen and (max-width: 768px) {
-  /* Styles for smartphones */
   .form-container {
     max-width: 100%;
     padding: 10px;
@@ -119,19 +118,56 @@ td {
     padding: 8px 16px;
     font-size: 12px;
   }
+
+  .button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+  }
 }
 
+/* Styles for smaller screens */
+@media only screen and (max-width: 480px) {
+  .form-container {
+    max-width: 90%;
+    padding: 8px;
+    margin: 0 auto;
+  }
 
+  .form-group {
+    margin-bottom: 8px;
+  }
 
+  .form-label {
+    font-size: 10px;
+  }
 
-.button {
-  display: inline-block;
-  padding: 8px 12px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
+  input[type="text"],
+  input[type="number"] {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .submit-btn {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 12px;
+    cursor: pointer;
+  }
 }

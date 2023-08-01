@@ -40,6 +40,62 @@
       </div>
     </main>
   </div>
+<!-- HTML content with a logout button and other elements -->
+<div>
+  <!-- Your HTML content here -->
+</div>
+
+<script>
+  // Set the timeout duration (30 minutes = 30 minutes * 60 seconds * 1000 milliseconds)
+  const timeoutDuration = 30 * 60 * 1000;
+
+  let logoutTimer;
+  let countdownInterval;
+
+  function startLogoutTimer() {
+    logoutTimer = setTimeout(logout, timeoutDuration);
+    startCountdown();
+  }
+
+  function startCountdown() {
+    const startTime = Date.now();
+    countdownInterval = setInterval(() => {
+      const currentTime = Date.now();
+      const remainingTime = timeoutDuration - (currentTime - startTime);
+      updateCountdown(remainingTime);
+      if (remainingTime <= 0) {
+        logout();
+      }
+    }, 1000); // Update countdown every second (1000 milliseconds)
+  }
+
+  function updateCountdown(time) {
+    const minutes = Math.floor(time / (1000 * 60));
+    const seconds = Math.floor((time % (1000 * 60)) / 1000);
+    // Update the countdown display on the page (replace 'countdown-display' with the actual ID or class name)
+    document.getElementById('countdown-display').innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  function logout() {
+    // Implement your logout logic here
+    // For example, redirect to the logout page or clear session data
+    alert('You have been automatically logged out due to inactivity.');
+  }
+
+  // Event listeners to reset the timer on user activity
+  document.addEventListener('mousemove', resetLogoutTimer);
+  document.addEventListener('keydown', resetLogoutTimer);
+  document.addEventListener('click', resetLogoutTimer);
+
+  function resetLogoutTimer() {
+    clearTimeout(logoutTimer);
+    clearInterval(countdownInterval);
+    startLogoutTimer();
+  }
+
+  // Start the initial timer
+  startLogoutTimer();
+</script>
 
 </body>
 </html>

@@ -19,78 +19,87 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top :2px;
-  padding-bottom: 20px;
-  background-color:white;
-  
-}
-
-/*.logo img {
-  margin: 10px;
-  height:auto;
-  width: 300px; Set the fixed width of the smallest image 
-  padding-top:5px;
-  padding-right:5px;
-  padding-bottom: 20px;; /* Padding for each image 
-}*/
-
-.logo .minimax{
-  margin:4px;
-  max-width:250px;
-  height:auto;
   padding-top: 2px;
-  padding-left:10px;
-  padding-bottom:92px;
-  
-
+  padding-bottom: 20px;
+  background-color: white;
 }
+
+.logo .minimax {
+  margin: 4px;
+  max-width: 250px;
+  height: auto;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-bottom: 92px;
+}
+
 .logo .star {
   margin: 4px;
-  max-width: 40px; /* Set the fixed width of the second image */
-  padding-bottom:92px;
-  padding-top:2px;
-  
-   /* Padding for each image */
+  max-width: 40px;
+  padding-bottom: 92px;
+  padding-top: 2px;
 }
 
 .logo .starr {
   margin: 4px;
   max-width: 300px;
-  height:auto; /* Set the fixed width of the largest image */
-  padding-top:2px;
-  padding-bottom:10px;
-
-   /* Padding for each image */
+  height: auto;
+  padding-top: 2px;
+  padding-bottom: 10px;
 }
-
 
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {
   .logo img {
-    width: 80px; /* Adjust the width of the smallest image for small screens */
-   padding-bottom:20px;
-   padding-top:1%;
-    /* Adjust padding for small screens */
+    width: 80px;
+    padding-bottom: 20px;
+    padding-top: 1%;
   }
-  .logo .minimax{
-    width:30%;
-    height:auto;
-    padding-top:2px;
-    padding-bottom:14%;
+
+  .logo .minimax {
+    width: 30%;
+    height: auto;
+    padding-top: 2px;
+    padding-bottom: 14%;
   }
 
   .logo .star {
-    width: 7%; /* Adjust the width of the second image for small screens */
-    padding-top:2px;
-    padding-bottom:14%;
-     /* Adjust padding for small screens */
+    width: 7%;
+    padding-top: 2px;
+    padding-bottom: 14%;
   }
 
   .logo .starr {
-    width: 40%; /* Adjust the width of the largest image for small screens */
-    padding-top:2px;
-    padding-bottom:4px;
-     /* Adjust padding for small screens */
+    width: 40%;
+    padding-top: 2px;
+    padding-bottom: 4px;
   }
 }
-/* Media queries for responsive design */
+
+/* Media query for 480px screens */
+@media screen and (max-width: 480px) {
+  .logo img {
+    width: 50px;
+    padding-bottom: 15px;
+    padding-top: 1%;
+  }
+
+  .logo .minimax {
+    width: 40%;
+    height: auto;
+    padding-top: 2px;
+    padding-bottom: 10%;
+  }
+
+  .logo .star {
+    width: 10%;
+    padding-top: 2px;
+    padding-bottom: 10%;
+  }
+
+  .logo .starr {
+    width: 60%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
