@@ -1,3 +1,42 @@
+/* General styles */
+
+*{margin:0;
+  padding:10px;
+
+}.container {
+  text-align: center;
+  display: grid;
+}
+
+.centered {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 35px;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+
+/* Success and error messages */
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Styling for Success container */
 #success-container {
   display: flex;
   justify-content: center;
@@ -10,18 +49,81 @@
   font-weight: bold;
 }
 
-.container {
-  text-align: center;
-  display:block;
-}
-
+/* Styling for Logout container */
 .logout-container {
   text-align: right;
   padding-top: 2px;
-  margin-bottom: 20px;
-  margin-right: 60px;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
+.logout-button {
+  color: white;
+  background-color: rgb(228, 41, 41);
+  padding:8px;
+  margin-top:0;
+  margin-right:5px;
+  text-decoration:none ;
+  border-radius: 20px;
+  transition: 0.15s;
+}
+.logout-button:hover{
+  background-color:rgb(235, 39, 39);
+  color:white;
+}
+/* Styling for Registration heading */
+.registration-heading {
+  color: blue;
+  margin-bottom: 10px;
+}
+
+/* Styling for Entry */
+.Entry {
+  visibility: visible;
+  margin-bottom:20px;
+  margin-top:12px;
+}
+
+/* Styling for user and visitor buttons */
+
+#visitorButton {
+  background-color: green;
+}
+#userButton{
+  background-color: green;
+}
+#visitorButton:hover{
+  background-color: rgb(162, 240, 214);
+  color:rgb(36, 30, 31);
+}
+#userButton:hover{
+  background-color: rgb(162, 240, 214);
+  color:rgb(36, 30, 31);
+}
+/* Styling for Exit buttons */
+#exitWithVehicleButton {
+  background-color: purple;
+  transition: 0.15s;
+  opacity: 0.9;
+}
+#exitWithVehicleButton:hover{
+  background-color: rgb(218, 196, 196);
+  color: black;
+}
+#exitWithoutVehicleButton{
+  background-color: purple;
+  opacity:0.9;
+  transition: 0.15s;
+}
+
+#exitWithoutVehicleButton:hover {
+  background-color: rgb(218, 196, 196);
+  color: black;
+}
+
+
+
+/* Styling for login button */
 .login-button {
   padding: 10px 20px;
   background-color: #ff6f00; /* Bright Orange */
@@ -32,229 +134,44 @@
   font-size: 18px;
   cursor: pointer;
 }
-.logout-button {
-  color: white;
-  background-color: red;
-  padding-right: 60px;
-  margin-right: 20px;
-}
 
-.registration-heading {
-  color: blue;
-  padding: top 80px;
-}
-
-.centered {
+/* Styling for Home div */
+.home {
+  display: flex;
+  justify-content: center;
   text-align: center;
+  padding: 20px;
+  margin: 25px;
+  font-weight:600;
 }
 
-.Entry {
-  visibility: visible;
-}
 
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-#userButton {
-  background-color: green;
-}
-
-#visitorButton {
-  background-color: green;
-}
-
-.exit {
-  margin-top: 20px;
-  padding-right:20px;
-  font-weight: bold;
-}
-
-#exitWithVehicleButton {
-  background-color: purple;
-}
-
-#exitWithoutVehicleButton {
-  background-color: purple;
-}
-
-.button:hover {
-  text-decoration: none;
-}
-
-.button:active {
-  position: relative;
-  top: 1px;
-}
-
-/* Success message styles */
-.success-message {
-  color: green;
-  margin-bottom: 10px;
-}
-
-.error-message {
-  color: red;
-  margin-bottom: 10px;
-}
-
-/* Media queries for responsive design */
 @media screen and (max-width: 768px) {
-  
-  #success-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #7ED321;
-    color: white;
-    padding: 3px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  .logout-container {
-    text-align: right;
-    margin-bottom: 2px;
-    margin-right: 20px;
-    padding-bottom:10px;
-    margin-top:5px;
-    font-size:12px;
-  }
-  
-  .login-button {
-    padding: 8px 12px;
-    background-color: #ff6f00; /* Bright Orange */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 8x;
-    cursor: pointer;
-  }
-  .logout-button {
-    color: white;
-    background-color: red;
-  }
-  
-  .registration-heading {
-    color: blue;
-    font-size:20px;
-  }
-  
-  .centered {
-    text-align: center;
-    font-size:15px;
-    text-shadow:none;
-    padding:15px;
-  }
-  
-  .Entry {
-    visibility: visible;
-  }
-  
+  /* For screen sizes 768px and below */
+
   .button {
-    display: inline-block;
-    padding:6px 10px;
-    margin: 2px;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  #userButton {
-    background-color: green;
-  }
-  
-  #visitorButton {
-    background-color: green;
-  }
-  
-  .exit {
-    margin-top: 8px;
-    font-weight: bold;
-  }
-  
-  #exitWithVehicleButton {
-    background-color: purple;
-    padding-left:4px;
-  }
-  
-  #exitWithoutVehicleButton {
-    background-color: purple;
-  }
-  
-  .button:hover {
-    text-decoration: none;
-  }
-  
-  .button:active {
-    position: relative;
-    top: 1px;
-  }
-  
-  /* Success message styles */
-  .success-message {
-    color: green;
-    margin-bottom: 10px;
-  }
-  
-  .error-message {
-    color: red;
-    margin-bottom: 10px;
-  }
-}
-
-/* Media query for 480px screens */
-@media screen and (max-width: 480px) {
-  /* Adjust styles for smaller screens */
-  #success-container {
-    font-size: 10px;
-    padding: 2px;
-  }
-
-  .logout-container {
-    margin-right: 10px;
-    padding-bottom: 5px;
-    font-size: 10px;
-  }
-
-  .login-button {
-    padding: 6px 10px;
-    font-size: 8px;
-  }
-
-  .registration-heading {
+    margin: 20px;
+    padding: 10px 15px;
     font-size: 14px;
   }
 
-  .centered {
-    font-size: 12px;
+  .home {
     padding: 10px;
+    margin: 15px;
   }
+}
+
+@media screen and (max-width: 480px) {
+  /* For screen sizes 480px and below */
 
   .button {
-    padding: 4px 8px;
-    margin: 2px;
-    font-size: 10px;
+    margin: 15px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
 
-  .exit {
-    margin-top: 6px;
-  }
-
-  #exitWithVehicleButton {
-    padding-left: 2px;
+  .home {
+    padding: 5px;
+    margin: 10px;
   }
 }

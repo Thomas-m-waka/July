@@ -31,14 +31,7 @@
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+
 
 .submit-btn {
   background-color: green;
@@ -92,82 +85,55 @@ td {
   height: 200px;
 }
 
-/* Styles for tablets and smaller screens */
-@media only screen and (max-width: 768px) {
+
+@media screen and (max-width: 600px) {
+  /* For screen sizes 600px and below */
+
+  .button,
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
   .form-container {
     max-width: 100%;
     padding: 10px;
-    margin: 0 auto;
   }
 
-  .form-group {
-    margin-bottom: 10px;
-  }
-
-  .form-label {
+  table {
     font-size: 12px;
-  }
-
-  input[type="text"],
-  input[type="number"] {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .submit-btn {
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-
-  .button {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
   }
 }
 
-/* Styles for smaller screens */
-@media only screen and (max-width: 480px) {
-  .form-container {
-    max-width: 90%;
-    padding: 8px;
-    margin: 0 auto;
-  }
+@media screen and (max-width: 400px) {
+  /* For screen sizes 400px and below */
 
-  .form-group {
-    margin-bottom: 8px;
-  }
-
-  .form-label {
-    font-size: 10px;
-  }
-
-  input[type="text"],
-  input[type="number"] {
-    font-size: 10px;
-    padding: 6px;
-  }
-
+  .button,
   .submit-btn {
+    font-size: 12px;
     padding: 6px 12px;
-    font-size: 10px;
   }
 
-  .button {
-    display: inline-block;
-    padding: 6px 10px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 2px;
-    font-size: 12px;
-    cursor: pointer;
+  .form-container {
+    max-width: 100%;
+    padding: 5px;
   }
+}
+
+/* Styles for zoomable images */
+.zoomable-container {
+  position: relative;
+  display: inline-block;
+}
+
+.zoomable-image {
+  width: 20px; /* Initial size */
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.zoomable-image.zoomed {
+  width: 200px; /* Zoomed size */
+  height: 200px;
 }

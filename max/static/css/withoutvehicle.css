@@ -1,3 +1,10 @@
+
+*{
+  margin:0;
+  padding:10px;
+  text-overflow: unset;
+
+}
 /* Common styles */
 .error {
   color: red;
@@ -21,7 +28,7 @@
 }
 
 .form-container {
-  max-width: 400px;
+  max-width:400px;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
@@ -31,28 +38,34 @@
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom:auto;
   text-align: left;
+  max-width: 100%;
 }
 
 .form-label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+  padding:5px;
 }
 
 input[type="text"],
 input[type="number"] {
-  width: 400px;
-  padding: 10px;
-  border: 1px solid #ccc;
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #88afe0;
   border-radius: 4px;
-  box-sizing: border-box;
+  margin-right: 2px;
 }
 
 label[for="purpose"] {
   font-weight: bold;
-  width: 400px;
+  width: 100%;
+  padding:12px;
+  border-radius: 4px;
 }
 
 .submit-btn {
@@ -66,7 +79,7 @@ label[for="purpose"] {
 }
 
 .table-container {
-  overflow-x: auto;
+  overflow-x: none;
   margin-top: 20px;
 }
 
@@ -80,17 +93,25 @@ label[for="purpose"] {
 #deleteFrontButton {
   background-color: red;
   color: white;
+  margin-top:5px;
+  margin-left:150px;
+  padding:2px;
+  display:flex;
+  flex-direction: row;
+
+  border-radius:10px;
 }
 
 #captureFrontButton {
   background-color: rgb(58, 86, 209);
   color: white;
+  border-radius:10px;
 }
 
 /* Styles for the purpose select element */
 #purpose {
-  width: 400px;
-  padding: 10px;
+  width: 100%;
+  padding: 4px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -98,262 +119,63 @@ label[for="purpose"] {
 #canvas{
   display: none;
   height:fit-content;
-  width:400px;
+  width:300px;
+  border-radius:10px;
 }
 #startCameraButton{
   background-color:black;
+  border-radius: 10px;
+  margin:10px;
   color:white;
 }
 #videoFeed{
   display:none;
   height:fit-content;
-  width:400px;
+  width:380px;
+  border-radius: 20px;
 }
 .camera{
   display:flex;
   flex-direction: column;
   align-items:center;
+  border-radius: 40px;
 }
 
 /*captured images */
 #frontImage{
-  max-width: 100%;
+  max-width: 380px;
   margin-top: 10px;
+  border-radius: 20px;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-
-  /* Common styles */
-  .error {
-    color: red;
-  }
-
-  .user {
-    color: lightblue;
-    text-align: center;
-  }
-
-  .button {
-    display: inline-block;
-    padding: 8px 18px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-  }
-
+@media screen and (max-width: 600px) {
   .form-container {
-    max-width: 85%;
-    margin: 0 auto;
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-
-  .form-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    margin: 3px auto;
+    max-width: 100%;
   }
 
   input[type="text"],
-  input[type="number"] {
-    width: 85%;
-    margin: 3px auto;
-  }
-
-  label[for="purpose"] {
-    font-weight: bold;
-    width: 85%;
-  }
-
-  .submit-btn {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+  input[type="number"],
+  label[for="purpose"],
+  #purpose {
+    width: 100%;
   }
 
   .table-container {
     overflow-x: auto;
-    margin-top: 20px;
-    margin: 3px auto;
   }
 
-  /* Specific styles for withoutvehicle.html */
-  .camera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  #canvas,
+  #videoFeed {
+    width: 100%;
+
+    
   }
 
   #deleteFrontButton {
-    background-color: red;
-    color: white;
+    margin-left: 5px;
   }
 
-  #captureFrontButton {
-    background-color: rgb(58, 86, 209);
-    color: white;
-  }
-
-  /* Styles for the purpose select element */
-  #purpose {
-    width: 85%;
-    margin: 3px auto;
-  }
-  #canvas {
-    display: none;
-    height: fit-content;
-    width: 300px;
-    margin: 3px auto;
-  }
-  #startCameraButton {
-    background-color: black;
-    color: white;
-  }
-  #videoFeed {
-    display: none;
-    height: fit-content;
-    width: 300px;
-  }
-  .camera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /*captured images */
-  #frontImage {
-    max-width: 88%;
-    margin-top: 8px;
-  }
-}
-
-/* Media query for 480px screens */
-@media screen and (max-width: 480px) {
-  /* Adjust styles for smaller screens */
-
-  /* Common styles */
-  .error {
-    color: red;
-  }
-
-  .user {
-    color: lightblue;
-    text-align: center;
-  }
-
-  .button {
-    display: inline-block;
-    padding: 6px 14px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    font-size: 10px;
-    cursor: pointer;
-  }
-
-  .form-container {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .form-group {
-    margin-bottom: 16px;
-    text-align: left;
-  }
-
-  .form-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    margin: 2px auto;
-  }
-
-  input[type="text"],
-  input[type="number"] {
-    width: 80%;
-    margin: 2px auto;
-  }
-
-  label[for="purpose"] {
-    font-weight: bold;
-    width: 80%;
-  }
-
-  .submit-btn {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-
-  .table-container {
-    overflow-x: auto;
-    margin-top: 16px;
-    margin: 2px auto;
-  }
-
-  /* Specific styles for withoutvehicle.html */
-  .camera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #deleteFrontButton {
-    background-color: red;
-    color: white;
-  }
-
-  #captureFrontButton {
-    background-color: rgb(58, 86, 209);
-    color: white;
-  }
-
-  /* Styles for the purpose select element */
-  #purpose {
-    width: 80%;
-    margin: 2px auto;
-  }
-  #canvas {
-    display: none;
-    height: fit-content;
-    width: 280px;
-    margin: 2px auto;
-  }
-  #startCameraButton {
-    background-color: black;
-    color: white;
-  }
-  #videoFeed {
-    display: none;
-    height: fit-content;
-    width: 280px;
-  }
-  .camera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /*captured images */
-  #frontImage {
-    max-width: 80%;
-    margin-top: 6px;
+  #frontImage{
+    max-width: 100%;
   }
 }

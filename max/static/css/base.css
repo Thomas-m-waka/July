@@ -1,4 +1,59 @@
 /* Add styles for flash messages */
+* {
+  margin: 0;
+  padding: 9px;
+}
+
+.headerr {
+  background-color: white;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+.logo {
+  width: 400px;
+  padding: 2px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-right: 30px;
+}
+
+.minimax {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: white;
+  padding: 4px;
+  margin-left: 0;
+  margin-top: 50px; /* Reduced margin-top */
+}
+
+.star {
+  background-color: white;
+  width: 14%;
+  height: 45px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 50px; /* Reduced margin-top */
+  display: flex;
+  flex-direction: row;
+}
+
+.starr {
+  background-color: white;
+  margin-top: 0px;
+  width: 100%;
+  height: 120px;
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+
 .messages {
   margin: 10px 0;
 }
@@ -9,97 +64,61 @@
   border-radius: 5px;
 }
 
-.message.success {
-  background-color: #dff0d8;
-  color: #279b28;
-}
 
-/* Add styles for the header */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2px;
-  padding-bottom: 20px;
-  background-color: white;
-}
-
-.logo .minimax {
-  margin: 4px;
-  max-width: 250px;
-  height: auto;
-  padding-top: 2px;
-  padding-left: 10px;
-  padding-bottom: 92px;
-}
-
-.logo .star {
-  margin: 4px;
-  max-width: 40px;
-  padding-bottom: 92px;
-  padding-top: 2px;
-}
-
-.logo .starr {
-  margin: 4px;
-  max-width: 300px;
-  height: auto;
-  padding-top: 2px;
-  padding-bottom: 10px;
-}
-
-/* Media queries for responsive design */
 @media screen and (max-width: 768px) {
-  .logo img {
-    width: 80px;
-    padding-bottom: 20px;
-    padding-top: 1%;
+  /* For screen sizes 768px and below */
+
+  .logo {
+    width: 100%;
+    margin-right: 0;
+    justify-content: center;
   }
 
-  .logo .minimax {
-    width: 30%;
-    height: auto;
-    padding-top: 2px;
-    padding-bottom: 14%;
+  .minimax {
+    margin-top: 20px;
   }
 
-  .logo .star {
-    width: 7%;
-    padding-top: 2px;
-    padding-bottom: 14%;
+  .star {
+    margin-top: 20px;
+    justify-content: center;
   }
 
-  .logo .starr {
-    width: 40%;
-    padding-top: 2px;
-    padding-bottom: 4px;
+  .starr {
+    margin-top: 20px;
+    justify-content: center;
   }
 }
 
-/* Media query for 480px screens */
 @media screen and (max-width: 480px) {
-  .logo img {
-    width: 50px;
-    padding-bottom: 15px;
-    padding-top: 1%;
+  /* For screen sizes 480px and below */
+
+  .headerr {
+    padding: 2px;
+    border-radius: 10px;
   }
 
-  .logo .minimax {
-    width: 40%;
-    height: auto;
-    padding-top: 2px;
-    padding-bottom: 10%;
+  .logo {
+    width: 100%;
+    margin-right: 0;
+    justify-content: center;
   }
 
-  .logo .star {
-    width: 10%;
-    padding-top: 2px;
-    padding-bottom: 10%;
+  .minimax {
+    margin-top: 10px;
   }
 
-  .logo .starr {
-    width: 60%;
-    padding-top: 2px;
-    padding-bottom: 2px;
+  .star {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .starr {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .message {
+    padding: 8px;
+    margin-bottom: 8px;
   }
 }

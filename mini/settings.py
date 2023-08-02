@@ -94,8 +94,8 @@ WSGI_APPLICATION = 'mini.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 import dj_database_url
-
-'''DATABASES = {
+'''
+DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE'),
         'NAME': os.environ.get('DB_NAME'),
@@ -104,9 +104,9 @@ import dj_database_url
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
     }
-}'''
+}
 # settings.py
-
+'''
 import os
 import dj_database_url
 
