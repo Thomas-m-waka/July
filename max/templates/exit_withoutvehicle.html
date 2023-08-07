@@ -25,11 +25,13 @@
           {% endif %}
           <th>TIME IN</th>
           <th>TIME OUT</th>
+          <th>TIME SPENT</th>
           <th>DATE</th>
           {% if user.is_superuser and user.is_authenticated %}
           <th>ID PHOTO</th>
           {% endif %}
           <th>EXIT</th>
+          
         </tr>
 
         {% for withoutvehicle in withoutvehicles %}
@@ -46,6 +48,7 @@
             {% endif %}
             <td>{{ withoutvehicle.time_in }}</td>
             <td>{{ withoutvehicle.time_out }}</td>
+            <td>{{withoutvehicle.time_spent}}</td>
             <td>{{ withoutvehicle.today }}</td>
             {% if user.is_superuser and user.is_authenticated %}
             <td>
@@ -64,7 +67,7 @@
                 </form>
               {% endif %}
             </td>
-          </tr>
+                      </tr>
         {% endfor %}
       </table>
     </div>

@@ -155,28 +155,49 @@ class WithoutVehicle(LoginRequiredMixin, TemplateView):
 class UpdateWithVehicleTimeOutView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         withvehicle_id = kwargs['withvehicle_id']
-        try:
-            with_vehicle = withvehicle.objects.get(id=withvehicle_id)
-            with_vehicle.time_out = timezone.localtime().time()
-            with_vehicle.Exit = True
-            with_vehicle.save()
+        with_vehicle = withvehicle.objects.get(id=withvehicle_id)
+        
+        current_time = timezone.localtime()
+        with_vehicle.time_out = current_time.time()
 
-            # Add success message
-            messages.success(request, 'Time Out WithVehicle updated successfully!')
+        time_in_datetime = datetime.combine(datetime.today(), with_vehicle.time_in)
+        time_out_datetime = datetime.combine(datetime.today(), with_vehicle.time_out)
 
-        except withvehicle.DoesNotExist:
-            # Add error message
+        time_difference = time_out_datetime - time_in_datetime
+        time_spent_timedelta = timedelta(minutes=time_difference.total_seconds() / 60)
+
+        with_vehicle.time_spent = time_spent_timedelta
+        with_vehicle.Exit = True
+        with_vehicle.save()
+
+        if with_vehicle.time_out is not None:
+            # Time updated successfully
+            messages.success(request, 'Time Out WithVehicle Updated successfully.')
+        else:
+            # Failed to update time
             messages.error(request, 'Failed to update time.')
 
         return redirect('home')
 
 
 # For updating time for people without vehicles
+from datetime import datetime, timedelta
+
 class UpdateWithoutVehicleTimeOutView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         withoutvehicle_id = kwargs['withoutvehicle_id']
         without_vehicle = withoutvehicle.objects.get(id=withoutvehicle_id)
-        without_vehicle.time_out = timezone.localtime().time()
+        
+        current_time = timezone.localtime()
+        without_vehicle.time_out = current_time.time()
+
+        time_in_datetime = datetime.combine(datetime.today(), without_vehicle.time_in)
+        time_out_datetime = datetime.combine(datetime.today(), without_vehicle.time_out)
+
+        time_difference = time_out_datetime - time_in_datetime
+        time_spent_timedelta = timedelta(minutes=time_difference.total_seconds() / 60)
+
+        without_vehicle.time_spent = time_spent_timedelta
         without_vehicle.Exit = True
         without_vehicle.save()
 
@@ -188,6 +209,8 @@ class UpdateWithoutVehicleTimeOutView(LoginRequiredMixin, View):
             messages.error(request, 'Failed to update time.')
 
         return redirect('home')
+
+
 
 
 # For handling errors
@@ -217,6 +240,8 @@ class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
 
         # Retrieve the file from the request
         idphoto = request.FILES.get('idphoto')
+   
+
 
         # Create a new WithoutVehicle object and save it to the database
         without_vehicle = withoutvehicle.objects.create(
@@ -225,8 +250,10 @@ class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
             phone_number=phone_number,
             company=company,
             purpose=purpose,
-            idphoto=idphoto,  # Associate the file with the attribute
-            time_in=timezone.localtime().time()
+            idphoto=idphoto, 
+            time_in=timezone.localtime().time(),
+             # Associate the file with the attribute
+            
         )
 
         # Update the context with the submitted data
@@ -255,8 +282,13 @@ class ExitWithVehicle(LoginRequiredMixin, TemplateView):
         purpose = request.POST['purpose']
         idphoto = request.FILES.get('idphoto')
         vehiclephoto=request.FILES.get('vehiclephoto')
+        
 
         try:
+            time_in = timezone.localtime()
+            time_out = timezone.localtime()
+            
+
             # Create a new withvehicle object and save it to the database
             with_vehicle = withvehicle.objects.create(
                 id_number=id_number,
@@ -267,15 +299,24 @@ class ExitWithVehicle(LoginRequiredMixin, TemplateView):
                 purpose=purpose,
                 idphoto=idphoto,
                 vehiclephoto=vehiclephoto,
-                time_in=timezone.localtime().time()
+                time_in=time_in,
+                time_out=time_out,
+               
+                
             )
 
             # Add a success flash message
             messages.add_message(request, messages.SUCCESS, 'WithVehicle saved successfully.')
 
-        except Exception as e:
+        except Exception as e: 
             # Add an error flash message
             messages.add_message(request, messages.ERROR, f'Error: {str(e)}')
 
         # Redirect to the success URL
         return redirect('home')
+#views for calulating the time spent 
+
+
+
+
+

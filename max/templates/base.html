@@ -28,8 +28,7 @@
   </div>
 </div>
     </header>
-    <main>
-      <div class="container">
+    <div class="success-messages ">
         {% if messages %}
         <div class="messages">
           {% for message in messages %}
@@ -40,13 +39,20 @@
         </div>
 
       </div>
-    </main>
+    
   </div>
 <!-- HTML content with a logout button and other elements -->
 <div>
   <!-- Your HTML content here -->
 </div>
-
+<style>
+  .message {
+      color: green;
+      padding:4px;
+      
+     font-size: 20px;/* Set the text color to green */
+    }
+</style>
 <script>
   // Set the timeout duration (30 minutes = 30 minutes * 60 seconds * 1000 milliseconds)
   const timeoutDuration = 30 * 60 * 1000;

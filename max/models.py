@@ -18,11 +18,16 @@ class withoutvehicle(models.Model):
     time_out = models.TimeField(null=True, blank=True)
     today = models.DateField(auto_now_add=True)
     idphoto = models.ImageField(null=True,blank=True,upload_to="Idphotowithoutvehicle/")  # Store the front ID picture as a base64 string
+    time_spent = models.DurationField(null=True, blank=True)
     Exit = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.name
- # model for the people with vehicle        
+  
+
+ # model for the people with vehicle   
+    
 class withvehicle(models.Model):  
     name = models.CharField(max_length=100)      
     id_number = models.CharField(max_length=10)
@@ -35,8 +40,7 @@ class withvehicle(models.Model):
     today = models.DateField(auto_now_add=True)
     idphoto = models.ImageField(null=True,blank=True,upload_to="IDphotowithvehicle/") 
     vehiclephoto = models.ImageField(null=True,blank=True,upload_to="Vehiclephoto/") 
+    time_spent = models.DurationField(null=True, blank=True)
     Exit = models.BooleanField(default=False)
-
-
     def __str__(self):
-        return self.name   
+        return self.name

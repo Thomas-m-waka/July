@@ -19,17 +19,20 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('username',)
 
 class WithoutVehicleAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "id_number", "phone_number", "company", "purpose", "time_in", "time_out", "today", "idphoto_thumbnail", "Exit")
+    list_display = ("id", "name", "id_number", "phone_number", "company", "purpose", "time_in", "time_out","time_spent", "today", "idphoto_thumbnail", "Exit")
     list_filter = ['today']
     readonly_fields = ['time_in', 'time_out']
+
 
 
     def idphoto_thumbnail(self, obj):
         return format_html('<img src="{}" height="50"/>', obj.idphoto.url)
     idphoto_thumbnail.short_description = 'ID Photo'
 
+
+
 class WithVehicleAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "id_number", "phone_number", "vehicle_registration", "company", "purpose", "time_in", "time_out", "today", "idphoto_thumbnail", "vehiclephoto_thumbnail", "Exit")
+    list_display = ("id", "name", "id_number", "phone_number", "vehicle_registration", "company", "purpose", "time_in", "time_out","time_spent", "today", "idphoto_thumbnail", "vehiclephoto_thumbnail", "Exit")
     list_filter = ['today']
     readonly_fields = ['time_in', 'time_out']
 

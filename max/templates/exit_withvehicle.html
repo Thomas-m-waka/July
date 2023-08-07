@@ -24,12 +24,14 @@
           <th>PURPOSE</th>
           <th>TIME IN</th>
           <th>TIME OUT</th>
+          <th>TIME SPENT</th>
           <th>DATE</th>
           {% if user.is_superuser and user.is_authenticated %}
             <th>ID PHOTO</th>
             <th>VEHICLE PHOTO</th>
           {% endif %}
-          <th>Exit</th>
+          <th>EXIT</th>
+          
         </tr>
 
         {% for withvehicle in withvehicles %}
@@ -46,6 +48,9 @@
             <td>{{ withvehicle.purpose }}</td>
             <td>{{ withvehicle.time_in }}</td>
             <td>{{ withvehicle.time_out }}</td>
+            <td>
+              {{ withvehicle.time_spent }}
+            </td>
             <td>{{ withvehicle.today }}</td>
             {% if user.is_superuser and user.is_authenticated %}
               <td>
@@ -67,6 +72,7 @@
                 </form>
               {% endif %}
             </td>
+            
           </tr>
         {% endfor %}
       </table>
