@@ -36,7 +36,6 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS'
 SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', 'False') == 'True'
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
+     'cloudinary_storage',
     'cloudinary',
     'easy_thumbnails',
     'max',
@@ -93,8 +92,8 @@ WSGI_APPLICATION = 'mini.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-'''import dj_database_url
-
+import dj_database_url
+'''
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE'),

@@ -152,6 +152,8 @@ class WithoutVehicle(LoginRequiredMixin, TemplateView):
 
 
 # For updating time for people with vehicles
+from datetime import datetime, timedelta
+
 class UpdateWithVehicleTimeOutView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         withvehicle_id = kwargs['withvehicle_id']
@@ -164,7 +166,10 @@ class UpdateWithVehicleTimeOutView(LoginRequiredMixin, View):
         time_out_datetime = datetime.combine(datetime.today(), with_vehicle.time_out)
 
         time_difference = time_out_datetime - time_in_datetime
-        time_spent_timedelta = timedelta(minutes=time_difference.total_seconds() / 60)
+        hours = time_difference.seconds // 3600  # Calculate hours
+        minutes = (time_difference.seconds // 60) % 60  # Calculate remaining minutes
+
+        time_spent_timedelta = timedelta(hours=hours, minutes=minutes)
 
         with_vehicle.time_spent = time_spent_timedelta
         with_vehicle.Exit = True
@@ -181,7 +186,6 @@ class UpdateWithVehicleTimeOutView(LoginRequiredMixin, View):
 
 
 # For updating time for people without vehicles
-from datetime import datetime, timedelta
 
 class UpdateWithoutVehicleTimeOutView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
@@ -195,9 +199,14 @@ class UpdateWithoutVehicleTimeOutView(LoginRequiredMixin, View):
         time_out_datetime = datetime.combine(datetime.today(), without_vehicle.time_out)
 
         time_difference = time_out_datetime - time_in_datetime
-        time_spent_timedelta = timedelta(minutes=time_difference.total_seconds() / 60)
+        total_seconds = time_difference.total_seconds()
+        hours = int(total_seconds // 3600)  # Calculate hours
+        minutes = int((total_seconds // 60) % 60)  # Calculate remaining minutes
 
-        without_vehicle.time_spent = time_spent_timedelta
+        without_vehicle.duration_hours = hours  # Store hours in the model
+        without_vehicle.duration_minutes = minutes  # Store minutes in the model
+
+        without_vehicle.time_spent = f'{hours}:{minutes:02}'  # Format hours and minutes
         without_vehicle.Exit = True
         without_vehicle.save()
 

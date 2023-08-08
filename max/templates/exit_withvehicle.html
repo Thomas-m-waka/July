@@ -9,7 +9,34 @@
   {% if user.is_authenticated %}
     <a href="{% url 'home' %}" class="button">Back home</a>
 
-    <h3 class="user">WITH VEHICLE DETAILS</h3>
+    <h3 class="user">PEOPLE WITH VEHICLE (<span class="span">DETAILS</span>)</h3>
+    <style>
+      .span{
+        color:rgb(223, 12, 205);
+        margin-left:0px;
+        text-decoration: dotted;
+        
+        border-radius: 4px;
+        
+      }
+      
+      .user{
+        margin-left:10px;
+        
+        flex-direction: block;
+        width: 100%;
+        display: block;
+        border-radius: 20px;
+        color:blue;
+        font-size: bold;
+        margin-top:4px;
+        padding:20px;
+        text-decoration:none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    </style>
     <div class="table-container">
       <table>
         <tr>
