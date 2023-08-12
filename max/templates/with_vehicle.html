@@ -26,7 +26,9 @@
     <a href="{% url 'home' %}" class="button">Back home</a>
   
    
-   <div class="container">
+<div class="try">
+  <div class="helo">
+    <div class="container">
       <form method="post" action="{% url 'withvehicle' %}" enctype="multipart/form-data">
          {% csrf_token %}
 
@@ -120,6 +122,8 @@
       </form>
    </div>
 </body>
+  </div>
+</div>
 <script src="{% static 'js/withvehicle.js'%}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

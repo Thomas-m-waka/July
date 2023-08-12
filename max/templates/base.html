@@ -19,15 +19,21 @@
 </head>
 <body>
  
-    <header>
-<div class="headerr">
-  <div class="logo">
-    <div class="minimax"><img src="{% static 'images/Minimax.png'%}" ></div>
-    <div class="star"><img src="{% static 'images/star.png' %}"></div>
-    <div class="starr"><img src="{% static 'images/starr.png' %}" ></div>
+  <div class="header">
+    <div class="sender">
+      <img src="{% static 'images/Minimax.png' %}" class="minimax">
+    
+      
+        <img src="{% static 'images/star.png' %}" class="star">
+     
+      
+        <img src="{% static 'images/starr.png' %}" class="starr">
+      </div>
+    </div>
   </div>
-</div>
-    </header>
+
+
+    <!-- You can add content inside the header tag if needed -->
     <div class="success-messages ">
         {% if messages %}
         <div class="messages">

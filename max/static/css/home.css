@@ -145,33 +145,3 @@
   font-weight:600;
 }
 
-
-@media screen and (max-width: 768px) {
-  /* For screen sizes 768px and below */
-
-  .button {
-    margin: 20px;
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-
-  .home {
-    padding: 10px;
-    margin: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  /* For screen sizes 480px and below */
-
-  .button {
-    margin: 15px;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .home {
-    padding: 5px;
-    margin: 10px;
-  }
-}

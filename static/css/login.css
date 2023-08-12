@@ -2,7 +2,8 @@
 
 /* Common styles for all screen sizes */
 form {
-  max-width: 400px;
+  display: grid;
+  grid-template-columns: auto;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -12,7 +13,8 @@ form {
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -48,35 +50,7 @@ label {
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 600px) {
-  /* For screen sizes 600px and below */
-
-  form {
-      padding: 10px;
-  }
-
-  input[type="text"],
-  input[type="password"] {
-      padding: 8px;
-  }
-
-  button[type="submit"] {
-      padding: 8px 16px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  /* For screen sizes 400px and below */
-
-  form {
-      padding: 5px;
-  }
-
-  input[type="text"],
-  input[type="password"] {
-      padding: 6px;
-  }
-
-  button[type="submit"] {
-      padding: 6px 12px;
+  .form{
+    display: block;
   }
 }

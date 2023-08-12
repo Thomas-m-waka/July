@@ -32,7 +32,8 @@
 }
 
 .form-container {
-  max-width: 400px;
+  display: grid;
+grid-template-columns: auto;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
@@ -52,24 +53,8 @@
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-.submit-btn {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
+
 
 .table-container {
   overflow-x: auto;
@@ -94,4 +79,39 @@ th {
 
 td {
   text-align: center;
+  padding: 2px;
+  border-radius: 10px;
+  transition: 0.35s;
+  
+
+}
+
+td:hover{
+ background-color: rgba(19, 18, 18, 0.911);
+  color:rgb(238, 177, 187);
+}
+tr:hover{
+  background-color:mediumspringgreen;
+  color:blue;
+  
+}
+.exit{
+  
+  margin-top:0;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: auto;
+  font-weight: lighter;
+}
+
+@media screen and (max-width: 600px){
+  .exit{
+   
+    display: grid;
+    grid-template-columns: auto;
+    border-radius: 2px;
+    padding:2px;
+  }
+  
+
 }

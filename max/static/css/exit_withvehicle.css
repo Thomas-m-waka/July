@@ -1,4 +1,25 @@
 
+*{
+  margin: 0;
+  padding:10px;
+}
+.zoomable-container {
+  position: relative;
+  display: inline-block;
+}
+
+.zoomable-image {
+  width: 20px; /* Initial size */
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.zoomable-image.zoomed {
+  width: 200px; /* Zoomed size */
+  height: 200px;
+}
+
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -12,7 +33,8 @@
 }
 
 .form-container {
-  max-width: 400px;
+  display: grid;
+grid-template-columns: auto;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
@@ -34,15 +56,6 @@
 
 
 
-.submit-btn {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
 
 .table-container {
   overflow-x: auto;
@@ -67,74 +80,39 @@ th {
 
 td {
   text-align: center;
+  padding: 2px;
+  border-radius: 10px;
+  transition: 0.35s;
+  
+
 }
 
-.zoomable-container {
-  position: relative;
-  display: inline-block;
+td:hover{
+ background-color: rgba(19, 18, 18, 0.911);
+  color:rgb(238, 177, 187);
+}
+tr:hover{
+  background-color:mediumspringgreen;
+  color:blue;
+  
+}
+.exit{
+  
+  margin-top:0;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: auto;
+  font-weight: lighter;
 }
 
-.zoomable-image {
-  width: 20px; /* Initial size */
-  height: 20px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.zoomable-image.zoomed {
-  width: 200px; /* Zoomed size */
-  height: 200px;
-}
-
-
-@media screen and (max-width: 600px) {
-  /* For screen sizes 600px and below */
-
-  .button,
-  .submit-btn {
-    font-size: 14px;
-    padding: 8px 16px;
+@media screen and (max-width: 600px){
+  .exit{
+   
+    display: grid;
+    grid-template-columns: auto;
+    border-radius: 2px;
+    padding:2px;
   }
+  
 
-  .form-container {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  table {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  /* For screen sizes 400px and below */
-
-  .button,
-  .submit-btn {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .form-container {
-    max-width: 100%;
-    padding: 5px;
-  }
-}
-
-/* Styles for zoomable images */
-.zoomable-container {
-  position: relative;
-  display: inline-block;
-}
-
-.zoomable-image {
-  width: 20px; /* Initial size */
-  height: 20px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.zoomable-image.zoomed {
-  width: 200px; /* Zoomed size */
-  height: 200px;
 }

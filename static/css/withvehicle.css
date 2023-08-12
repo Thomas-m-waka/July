@@ -1,8 +1,23 @@
 
-*{margin:0;
-  padding:10px;
+*{margin:0 auto;
+  padding:10px;}
+.try{
+  width:100%;
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: auto;
+  
+  padding: 2px;
+  margin-top: 10px;
+  border-radius: 2px;
+  justify-content: center;
+  margin-right:0;
+  margin-left: 0;
 
-}.error {
+  
+
+}
+.error {
   color: red;
 }
 
@@ -13,6 +28,7 @@ input.error {
 .home {
   display: inline-block;
   padding: 8px 12px;
+  
   background-color: #4CAF50;
   margin-left: 20px;
   margin-bottom: 2px;
@@ -27,36 +43,49 @@ input.error {
 }
 
 .form-container {
-  max-width: 400px;
+  
+  display: grid;
+  grid-template-columns: auto;
+  
   margin: 0 auto;
   text-align: center;
   padding: 20px;
   padding-top: 2px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
-  margin-bottom: 20px;
-  text-align: left;
-  max-width:100%;
+width: 100%;
+
+border-radius: 4px;
+margin-left:5px;
+margin-right:10px;
 }
 
 .form-label {
-  display: block;
+  display:grid;
   font-weight: bold;
-  margin-bottom: 5px;
-  padding-top: 4px;
+  margin-left: 0;
+  justify-content: left;
+  margin-bottom: 0;
+  margin-top: 0;
+  border-radius:10px;
+  padding:14px;
 }
 
 input[type="text"],
 input[type="number"] {
+  display: grid;
+  grid-template-columns: auto;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  margin-top:0;
+  font-size: medium;
 }
 
 .submit-btn {
@@ -78,6 +107,8 @@ input[type="number"] {
 label[for="purpose"] {
   font-weight: bold;
   width:100%;
+  display: grid;
+  grid-template-columns: auto;
 }
 
 /* Other purpose container */
@@ -90,12 +121,14 @@ label[for="purpose"] {
 label[for="other_purpose"] {
   font-weight: bold;
   width:100%;
+  display: grid;
+  grid-template-columns: auto;
 }
 
 /* Other purpose input */
 #other_purpose {
-  width: 100%;
-  box-sizing: border-box;
+display: grid;
+grid-template-columns: auto;
 }
 
 /* ID camera container */
@@ -137,18 +170,14 @@ label[for="other_purpose"] {
 /* Canvases */
 #canvas1,
 #canvas2 {
-  display: none;
-  height: fit-content;
-  width: 100%;
-  border-radius: 10px;
+width:100%;
 }
 
 /* Captured images */
 #frontImage1,
 #frontImage2 {
-  max-width: 100%;
-  margin-top: 10px;
-  border-radius: 20px;
+display:grid;
+width: 100%;
 }
 
 /* Delete buttons */
@@ -175,11 +204,7 @@ label[for="other_purpose"] {
 
 /* CSS for the purpose select element */
 #purpose {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+width:100%
 }
 
 .button {
@@ -194,55 +219,28 @@ label[for="other_purpose"] {
   cursor: pointer;
 }
 
+@media screen and (max-width: 600px){
+  .try{
+    
+    padding:2px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: justify;
 
-@media screen and (max-width: 600px) {
-  .form-container {
-    max-width: 100%;
-    padding: 10px;
   }
-
-  .form-label,
-  input[type="text"],
-  input[type="number"],
-  #purpose,
-  #other_purpose {
-    width: 100%;
-    max-width: 100%;
+  .form-container{
+    
+    margin-left: 0 auto;
+    justify-content: left;
   }
-
-  .form-label {
-    margin-bottom: 10px;
+  .form-group{
+   
+    margin-top:10px;
+    margin-left:2px;
   }
-
-  .form-group {
-    margin-bottom: 15px;
-  }
-
-  .home,
-  .submit-btn {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  #videoFeed1,
-  #videoFeed2,
-  #canvas1,
-  #canvas2,
-  #frontImage1,
-  #frontImage2 {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  #startCameraButton1,
-  #startCameraButton2,
-  #captureFrontButton1,
-  #captureFrontButton2,
-  #deleteFrontButton1,
-  #deleteFrontButton2 {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 5px;
-    width: 100%;
+  .canvas{
+    justify-content: center;
   }
 }

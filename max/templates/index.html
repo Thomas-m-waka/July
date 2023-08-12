@@ -6,19 +6,20 @@
   {% if user.is_authenticated %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <script src="{% static 'js/home.js' %}"></script>
-    <div class="container">
-      <div class="logout-container">
-        <a href="{% url 'logout' %}" class="logout-button">Log Out</a>
-      </div>
-      
+<div class="page">
+  <div class="container">
+    <div class="logout-container">
+      <a href="{% url 'logout' %}" class="logout-button">Log Out</a>
+    </div>
+    
 
 <div class="home">
-  <h3 class="registration-heading">SECURITY REGISTRATION</h3>
+<h3 class="registration-heading">SECURITY REGISTRATION</h3>
 </div>
 <div class="centered">
-  <h4>ENTRY</h4>
-  <a href="{% url 'withvehicle' %}" class="button {% if current_url == 'withvehicle' %}active{% endif %}" id="userButton">With vehicle</a>
-  <a href="{% url 'withoutvehicle' %}" class="button {% if current_url == 'withoutvehicle' %}active{% endif %}" id="visitorButton">Without vehicle</a>
+<h4>ENTRY</h4>
+<a href="{% url 'withvehicle' %}" class="button {% if current_url == 'withvehicle' %}active{% endif %}" id="userButton">With vehicle</a>
+<a href="{% url 'withoutvehicle' %}" class="button {% if current_url == 'withoutvehicle' %}active{% endif %}" id="visitorButton">Without vehicle</a>
 </div>
 </div>
 <div class="centered">
@@ -32,6 +33,7 @@
 <a href="{% url 'login' %}" class="button login-button" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">Log In</a>
 </div>
 
+</div>
 </div>
   <script>
     // Add your custom script here
