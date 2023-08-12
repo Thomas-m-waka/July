@@ -21,13 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 from  dotenv import load_dotenv
 load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jhstuwe76347'#os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True#os.getenv("DEBUG", False) == "True"
+DEBUG =os.getenv("DEBUG", False) == "True"
 
-ALLOWED_HOSTS = []
-'''
+ALLOWED_HOSTS = ['*']
+
 CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE', 'False') == 'True'
 SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE', 'False') == 'True'
 SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', 'False') == 'True'
@@ -35,7 +35,6 @@ SECURE_HSTS_SECONDS = int(os.environ.get('SECURE_HSTS_SECONDS', 0))
 SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS', 'False') == 'True'
 SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', 'False') == 'True'
 
-'''
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,8 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'cloudinary_storage',
-    #'cloudinary',
+    'cloudinary_storage',
+    'cloudinary',
     'easy_thumbnails',
     'max',
     
@@ -93,7 +92,7 @@ WSGI_APPLICATION = 'mini.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 import dj_database_url
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE'),
@@ -105,7 +104,7 @@ DATABASES = {
     }
 }
 # settings.py
-
+'''
 import os
 import dj_database_url
 
@@ -113,10 +112,10 @@ import dj_database_url
 load_dotenv()
 
 # Configure the 'default' database using dj_database_url.config()
-'''DATABASES = {
+DATABASES = {
    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -184,7 +183,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 import cloudinary
 import cloudinary_storage
-'''
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
     'API_KEY': os.environ.get('API_KEY'),
@@ -210,4 +208,4 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 SESSION_COOKIE_AGE = 1800 
 
-SESSION_EXPIRE_SECONDS = os.environ.get('SESSION_EXPIRE_SECONDS', SESSION_COOKIE_AGE)'''
+SESSION_EXPIRE_SECONDS = os.environ.get('SESSION_EXPIRE_SECONDS', SESSION_COOKIE_AGE)
