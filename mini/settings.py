@@ -102,9 +102,9 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
     }
-}
+}'''
 # settings.py
-'''
+
 import os
 import dj_database_url
 
@@ -113,7 +113,7 @@ load_dotenv()
 
 # Configure the 'default' database using dj_database_url.config()
 DATABASES = {
-   'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+  'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 
