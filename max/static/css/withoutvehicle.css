@@ -55,7 +55,7 @@ input[type="number"] {
   display:grid;
   grid-template-columns: auto;
   flex-direction: row;
-  
+  width: 380px;
   padding: 12px;
   border: 1px solid #88afe0;
   border-radius: 4px;
@@ -64,7 +64,7 @@ input[type="number"] {
 
 label[for="purpose"] {
   font-weight: bold;
- 
+  width: 380;
   height: 6px;
   padding:12px;
   border-radius: 4px;
