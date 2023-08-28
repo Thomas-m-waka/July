@@ -16,6 +16,6 @@ path('update_withvehicle_time_out/<int:withvehicle_id>/', UpdateWithVehicleTimeO
 path('update_withoutvehicle_time_out/<int:withoutvehicle_id>/', UpdateWithoutVehicleTimeOutView.as_view(), name='update_withoutvehicle_time_out'),
 path('ExitWithoutVehicle/',ExitWithoutVehicle.as_view(),name='ExitWithoutVehicle'),
 path('ExitWithVehicle/',ExitWithVehicle.as_view(),name='ExitWithVehicle'),
-re_path(r'^.*/$',TemplateView.as_view(template_name='404.html')),
+re_path(r'^.*/$',TemplateView.as_view(template_name='security/404.html')),
 ]
 

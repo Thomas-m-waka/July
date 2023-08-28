@@ -11,11 +11,11 @@ from .models import withvehicle, withoutvehicle
 
 # Home page where the user is redirected
 class HomePageView(TemplateView):
-    template_name = "index.html"
+    template_name = "security/index.html"
 
 # People with vehicle registration
 class WithVehicle(LoginRequiredMixin, TemplateView):
-    template_name = 'with_vehicle.html'
+    template_name = 'security/with_vehicle.html'
     success_url = reverse_lazy('withvehicle')
 
     def get_context_data(self, **kwargs):
@@ -89,7 +89,7 @@ import base64
 # ...
 
 class WithoutVehicle(LoginRequiredMixin, TemplateView):
-    template_name = 'without_vehicle.html'
+    template_name = 'security/without_vehicle.html'
     success_url = reverse_lazy('withoutvehicle')
 
     def get_context_data(self, **kwargs):
@@ -226,11 +226,11 @@ class UpdateWithoutVehicleTimeOutView(LoginRequiredMixin, View):
 from django.shortcuts import render
 
 def handler404(request, exception):
-    return render(request, '404.html')
+    return render(request, 'security/404.html')
 
 
 class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
-    template_name = "exit_withoutvehicle.html"
+    template_name = "security/exit_withoutvehicle.html"
     success_url = reverse_lazy("ExitWithoutVehicle")
 
     def get_context_data(self, **kwargs):
@@ -273,7 +273,7 @@ class ExitWithoutVehicle(LoginRequiredMixin, TemplateView):
 
 # Exit with vehicle registration
 class ExitWithVehicle(LoginRequiredMixin, TemplateView):
-    template_name = "exit_withvehicle.html"
+    template_name = "security/exit_withvehicle.html"
     success_url = reverse_lazy('ExitWithVehicle')
 
     def get_context_data(self, **kwargs):

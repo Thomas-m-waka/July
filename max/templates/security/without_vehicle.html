@@ -1,27 +1,26 @@
-{% extends 'base.html' %}
-{% load static %}
+{%extends 'security/base.html' %}
 
 {% block content %}
-<!DOCTYPE html>
-<html>
-<head>
+{% load static %}
+
    <title></title>
-   <link rel="stylesheet" href="{% static 'css/withoutvehicle.css' %}">
-   <style>
+ <style>
       video {
          border: 1px solid black;
          display: block;
          margin-bottom: 10px;
       }
-
       #captureFrontButton,
       #deleteFrontButton {
          display: none;
       }
+    
    </style>
-</head>
-<body>
-  <a href="{% url 'home' %}" class="button">Back home</a>
+
+
+ <div class="back">
+  <a href="{% url 'home' %}" class="bak">Back home</a>
+ </div>
   <div class="container">
    <form method="post" action="{% url 'withoutvehicle' %}" enctype="multipart/form-data">
         {% csrf_token %}
@@ -92,7 +91,7 @@
         
      </form>
   </div>
-</body>
+
 <script src="{% static 'js/withoutvehicle.js'%}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -206,5 +205,5 @@
  });
 
 </script>
-</html>
+
 {% endblock %}

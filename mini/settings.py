@@ -26,7 +26,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =os.getenv("DEBUG", False) == "True"
 
-ALLOWED_HOSTS = ['*']
+# settings.py
+from decouple import config
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='localhost').split(',')
+
 
 CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE', 'False') == 'True'
 SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE', 'False') == 'True'
@@ -92,8 +96,8 @@ WSGI_APPLICATION = 'mini.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 import dj_database_url
-'''
-DATABASES = {
+
+'''DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE'),
         'NAME': os.environ.get('DB_NAME'),

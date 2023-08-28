@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{%extends 'security/base.html'%}
 {% block title %}Log In{% endblock title %}
 {% block content %}
    {% load static %}
-   <link rel="stylesheet" href="{% static 'css/login.css' %}">
-<div class="container">
+ 
+<div class="login-container">
   
   <form method="post">
     {% csrf_token %}

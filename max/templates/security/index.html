@@ -1,0 +1,81 @@
+
+{%extends 'security/base.html'%}
+{% block content %}
+  {% load static %}
+  <meta author ="Thomas">
+  {% if user.is_authenticated %}
+  
+    <script src="{% static 'js/home.js' %}"></script>
+    
+      <div class="logout-container">
+        <a href="{% url 'logout' %}" class="logout-button">Log Out</a>
+      </div>
+      
+
+<div class="home">
+  <h3 class="registration-heading">SECURITY REGISTRATION</h3>
+</div>
+
+  <h4 class="Entry">ENTRY</h4>
+ <div class="in">
+  <a href="{% url 'withvehicle' %}" class="buttonin"  id="userButton">With vehicle</a>
+  <a href="{% url 'withoutvehicle' %}" class="buttoninn" id="visitorButton">Without vehicle</a>
+
+ </div>
+
+<div class="c">
+  <h4 class="Entry">EXIT</h4>
+<div class="out">
+  <a href="{% url 'ExitWithVehicle' %}" class="buttonout" id="exitWithVehicleButton">With vehicle</a>
+<a href="{% url 'ExitWithoutVehicle' %}" class="buttonoutt" id="exitWithoutVehicleButton">Without vehicle</a>
+
+</div>
+</div>
+{% else %}
+<div class="llogin" >
+<p>  <a href="{% url 'login' %}" class="button login-button" >LogIn</a></p>
+
+ 
+</div>
+</div>
+
+<style>
+
+
+  .llogin{
+    
+    display:flex;
+    justify-content: center;
+    
+    text-align:center;
+    display:flex;
+    justify-content: center;
+    margin-top:30px;
+    margin-left:40px;
+    padding:10px;
+    font-weight: bolder;
+    transition:0.3s;
+
+    
+  }
+  .llogin:hover{
+    
+    color:black;
+    text-decoration: none;
+
+  }
+</style>
+  <script>
+    // Add your custom script here
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add a click event listener to the login button
+      var loginButton = document.querySelector('.login-button');
+      loginButton.addEventListener('click', function(event) {
+        // You can add additional script logic here if needed
+        console.log('Custom script logic');
+      });
+    });
+  </script>
+  {% endif %}
+{% endblock %}
+

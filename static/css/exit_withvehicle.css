@@ -1,8 +1,5 @@
 
-*{
-  margin: 0;
-  padding:10px;
-}
+
 .zoomable-container {
   position: relative;
   display: inline-block;
@@ -105,14 +102,3 @@ tr:hover{
   font-weight: lighter;
 }
 
-@media screen and (max-width: 600px){
-  .exit{
-   
-    display: grid;
-    grid-template-columns: auto;
-    border-radius: 2px;
-    padding:2px;
-  }
-  
-
-}

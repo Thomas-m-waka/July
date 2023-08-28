@@ -1,0 +1,159 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    
+  </head>
+  <body>
+    <style>
+      .message {
+          color: green;
+          padding:4px;
+          text-align: center;
+         font-size: 20px;/* Set the text color to green */
+        }
+        .headerr{
+                    
+          display: flex;
+          position:0;
+          
+          justify-content:center;
+          
+        }
+        .logo{
+          
+          padding:4px;
+          margin-bottom: 2px;
+        }
+        .minimax{
+          height:30px;
+          margin-right: 0;
+          margin-left:0;
+
+          
+        }
+        .star{
+          height: 20px;
+          margin-left: 0;
+          margin-right: 0;
+          padding-right: 0;
+          padding-left: 0;
+          
+        }
+        .starr{
+          height:70px;
+          margin-left: 0;
+        }
+    </style>
+   <header>
+      <div class="headerr">
+        <div class="logo">
+          <img src="{% static 'images/Minimax.png'%}" class="minimax">
+          <img src="{% static 'images/star.png' %}" class="star">
+          <img src="{% static 'images/starr.png' %}" class="starr" >
+        </div>
+      </div>
+          </header>
+          <div class="success-messages ">
+            {% if messages %}
+            <div class="messages">
+              {% for message in messages %}
+              <div class="message {{ message.tags }}">
+                {{ message }}
+              </div>
+              {% endfor %}
+            </div>
+    
+          </div>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+      // Auto-hide flash messages after 5 seconds
+      setTimeout(function() {
+        var messages = document.getElementsByClassName("message");
+        for (var i = 0; i < messages.length; i++) {
+          messages[i].style.display = "none";
+        }
+      }, 5000);
+    </script>
+    <script>
+      // Set the timeout duration (30 minutes = 30 minutes * 60 seconds * 1000 milliseconds)
+      const timeoutDuration = 30 * 60 * 1000;
+    
+      let logoutTimer;
+      let countdownInterval;
+    
+      function startLogoutTimer() {
+        logoutTimer = setTimeout(logout, timeoutDuration);
+        startCountdown();
+      }
+    
+      function startCountdown() {
+        const startTime = Date.now();
+        countdownInterval = setInterval(() => {
+          const currentTime = Date.now();
+          const remainingTime = timeoutDuration - (currentTime - startTime);
+          updateCountdown(remainingTime);
+          if (remainingTime <= 0) {
+            logout();
+          }
+        }, 1000); // Update countdown every second (1000 milliseconds)
+      }
+    
+      function updateCountdown(time) {
+        const minutes = Math.floor(time / (1000 * 60));
+        const seconds = Math.floor((time % (1000 * 60)) / 1000);
+        // Update the countdown display on the page (replace 'countdown-display' with the actual ID or class name)
+        document.getElementById('countdown-display').innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      }
+    
+      function logout() {
+        // Implement your logout logic here
+        // For example, redirect to the logout page or clear session data
+        alert('You have been automatically logged out due to inactivity.');
+      }
+    
+      // Event listeners to reset the timer on user activity
+      document.addEventListener('mousemove', resetLogoutTimer);
+      document.addEventListener('keydown', resetLogoutTimer);
+      document.addEventListener('click', resetLogoutTimer);
+    
+      function resetLogoutTimer() {
+        clearTimeout(logoutTimer);
+        clearInterval(countdownInterval);
+        startLogoutTimer();
+      }
+    
+      // Start the initial timer
+      startLogoutTimer();
+    </script>
+    
+  </body>
+</html>
+
+
+ 
+
+
+    
+  </div>
+<!-- HTML content with a logout button and other elements -->
+<div>
+  <!-- Your HTML content here -->
+</div>
+
+
+</body>
+</html>

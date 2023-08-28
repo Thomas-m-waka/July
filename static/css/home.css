@@ -13,7 +13,7 @@
 }
 
 .button {
-  display: inline-block;
+  display: flex;
   padding: 12px 20px;
   margin: 35px;
   padding: 15px;
@@ -50,27 +50,9 @@
 }
 
 /* Styling for Logout container */
-.logout-container {
-  text-align: right;
-  padding-top: 2px;
-  margin-bottom: 5px;
-  margin-right: 5px;
-}
 
-.logout-button {
-  color: white;
-  background-color: rgb(228, 41, 41);
-  padding:8px;
-  margin-top:0;
-  margin-right:5px;
-  text-decoration:none ;
-  border-radius: 20px;
-  transition: 0.15s;
-}
-.logout-button:hover{
-  background-color:rgb(235, 39, 39);
-  color:white;
-}
+
+
 /* Styling for Registration heading */
 .registration-heading {
   color: blue;
@@ -124,24 +106,5 @@
 
 
 /* Styling for login button */
-.login-button {
-  padding: 10px 20px;
-  background-color: #ff6f00; /* Bright Orange */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 18px;
-  cursor: pointer;
-}
 
-/* Styling for Home div */
-.home {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  margin: 25px;
-  font-weight:600;
-}
 

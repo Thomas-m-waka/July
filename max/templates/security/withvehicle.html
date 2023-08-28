@@ -1,12 +1,6 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-<!DOCTYPE html>
-<html>
-<head>
-   <title></title>
-   <link rel="stylesheet" href="{% static 'css/withvehicle.css' %}">
-   <style>
+{%load static%}
+<div class="vehi">
+ <style>
       video {
          border: 1px solid black;
          display: block;
@@ -20,10 +14,11 @@
          display: none;
       }
    </style>
-</head>
-<body>
+
   
-    <a href="{% url 'home' %}" class="button">Back home</a>
+   <div class="back">
+    <a href="{% url 'home' %}" class="bak">Back home</a>
+   </div>
   
    
 <div class="try">
@@ -283,5 +278,4 @@
      });
    });
 </script>
-</html>
-{% endblock %}
+</div>

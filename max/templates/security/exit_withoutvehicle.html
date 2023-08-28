@@ -1,13 +1,13 @@
-{% extends 'base.html' %}
+
+{%extends 'security/base.html' %}
 
 {% block content %}
   {% load static %}
 
   <meta author="Thomas">
-  <link rel="stylesheet" href="{% static 'css/exit_withoutvehicle.css' %}">
 
   {% if user.is_authenticated %}
-    <a href="{% url 'home' %}" class="button">Back home</a>
+    <a href="{% url 'home' %}" class="button1">Back home</a>
     <h3 class="user">PEOPLE WITHOUT VEHICLE (<span class="span">DETAILS</span>)</h3>
     
     <style>
@@ -133,7 +133,112 @@
         });
       }
     </script>
+<style>
 
+.zoomable-container {
+  position: relative;
+  display: inline-block;
+}
+
+.zoomable-image {
+  width: 20px; /* Initial size */
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.zoomable-image.zoomed {
+  width: 200px; /* Zoomed size */
+  height: 200px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-container {
+  display: grid;
+grid-template-columns: auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+th {
+  background-color: lightgray;
+}
+
+td {
+  text-align: center;
+  padding: 2px;
+  border-radius: 10px;
+  transition: 0.35s;
+  
+
+}
+
+td:hover{
+ background-color: rgba(19, 18, 18, 0.911);
+  color:rgb(238, 177, 187);
+}
+tr:hover{
+  background-color:mediumspringgreen;
+  color:blue;
+  
+}
+.exit{
+  
+  margin-top:0;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: auto;
+  font-weight: lighter;
+}
+
+
+</style>
   {% else %}
     <p>You are not logged in</p>
     <a href="{% url 'login' %}">Log In</a> |
