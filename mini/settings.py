@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
+  'cloudinary_storage',
+   'cloudinary',
     'easy_thumbnails',
     'max',
     
@@ -96,8 +96,8 @@ WSGI_APPLICATION = 'mini.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 import dj_database_url
-
-'''DATABASES = {
+'''
+DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE'),
         'NAME': os.environ.get('DB_NAME'),
@@ -115,7 +115,7 @@ import dj_database_url
 # Load environment variables from .env file
 load_dotenv()
 
-# Configure the 'default' database using dj_database_url.config()
+ #Configure the 'default' database using dj_database_url.config()
 DATABASES = {
   'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
@@ -187,6 +187,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 import cloudinary
 import cloudinary_storage
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
     'API_KEY': os.environ.get('API_KEY'),

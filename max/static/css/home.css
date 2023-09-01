@@ -91,16 +91,19 @@
 #exitWithVehicleButton:hover{
   background-color: rgb(218, 196, 196);
   color: black;
+  text-decoration: none;
 }
 #exitWithoutVehicleButton{
   background-color: purple;
   opacity:0.9;
   transition: 0.15s;
+  text-decoration: none;
 }
 
 #exitWithoutVehicleButton:hover {
   background-color: rgb(218, 196, 196);
   color: black;
+  text-decoration: none;
 }
 
 

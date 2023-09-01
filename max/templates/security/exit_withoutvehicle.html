@@ -7,10 +7,24 @@
   <meta author="Thomas">
 
   {% if user.is_authenticated %}
-    <a href="{% url 'home' %}" class="button1">Back home</a>
+    <div class="h">
+      <a href="{% url 'home' %}" class="button1">Back home</a>
+    </div>
     <h3 class="user">PEOPLE WITHOUT VEHICLE (<span class="span">DETAILS</span>)</h3>
     
     <style>
+      .h{
+        color:green;
+        font-size:16px;
+        display: block;
+        margin:20px;
+        padding:10px;
+
+      }
+      .h a{
+        text-decoration:none;
+        font-size: 20px;
+      }
       .span{
         color:rgb(223, 12, 205);
         margin-left:0px;
@@ -34,6 +48,20 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+    }
+    @media (max-width: 600px) {
+      .table-container{
+        width:100%;
+        overflow-x: auto;
+        margin:0;
+        
+      }
+      td{
+        font-size:24px;
+      }
+    }
+    .tr :nth-child(odd){
+      color:black;
     }
   </style>
   <div class="exit">
@@ -61,7 +89,7 @@
           <th>EXIT</th>
           
         </tr>
-
+        
         {% for withoutvehicle in withoutvehicles %}
           <tr>
             <td>{{ forloop.counter }}</td>
@@ -117,9 +145,7 @@
         }
       }, 4000);
 
-      document.addEventListener("contextmenu", function(e) {
-        e.preventDefault();
-      });
+ 
 
       // Add click event listener to all zoomable images
       var zoomableImages = document.getElementsByClassName("zoomable-image");
@@ -164,29 +190,6 @@
   cursor: pointer;
 }
 
-.form-container {
-  display: grid;
-grid-template-columns: auto;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.form-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-
 
 
 .table-container {
@@ -194,10 +197,17 @@ grid-template-columns: auto;
   margin-top: 20px;
 }
 
+
+
+
+
+
+
 table {
   width: 100%;
   border: 2px solid black;
   border-collapse: collapse;
+  
 }
 
 th,
@@ -219,23 +229,16 @@ td {
 
 }
 
+table{
+
+  color:black
+} 
+
 td:hover{
- background-color: rgba(19, 18, 18, 0.911);
-  color:rgb(238, 177, 187);
+  color:rgb(38, 41, 206);
 }
-tr:hover{
-  background-color:mediumspringgreen;
-  color:blue;
-  
-}
-.exit{
-  
-  margin-top:0;
-  border-radius: 2px;
-  display: grid;
-  grid-template-columns: auto;
-  font-weight: lighter;
-}
+
+
 
 
 </style>

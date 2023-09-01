@@ -1,109 +1,9 @@
-.logout-container{
- margin-right: 20px;
-  color:red;
-  display:flex;
-  margin-top: 0;
-  justify-content: right;
-  align-items: center;
-
-}
-.logout-button{
-  background-color:red;
-  color: white;
-  cursor: pointer;
-  border-radius: 2px;
-  padding:4px;
-  transition: background-color 0.3s ease;
-}
-.logout-button:hover{
-  background-color: red;
-  color:white;
-
-}
-.login-container{
-   display: flex;
-  justify-content: center;
- align-items: center;
-margin-top: 40px;
-}
-.back{
-  
-  color:white;
-  margin-left:20px;
-  padding: 5px;
-  border-radius: 10px;
-  margin-bottom:20px;
-  justify-content: center;
-  align-items: center;
-  display: block;
-}
-.bak{
-  background-color: black;
- padding:5px;
-  justify-content: left;
-  border-radius: 2px;
-
-}
-form {
- width: 400px; 
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-input[type="text"],
-input[type="password"]
-
- {
-  width: 350px;
-  border: 1px solid #49c7b6;;
-  color:black;
-  border-radius: 4px;
-  padding: 10px;
-}
-input[type="number"]{
-  color:black;
-  border:1px solid aquamarine;
-  width: 350px;
-  padding:8px;
-  border-radius: 4px;
-
-}
-input[type="purpose"]{
-  background-color: red;
-}
-.form-label{
-  display: block;
-  font-weight: bold;
-  color:black
+*{
+  margin:0;
+  padding:0;
 }
 
-.purpose{
-  width: 350px;
-display:block;
-  font-weight: bold;
-  color: black;
-}
-.other_purpose{
-  font-weight: bold;
-  color: black;
 
-}
-.submit-button{
-  background-color: rgb(8, 134, 8);
-  color:aliceblue;
-  align-items: center;
-  display: flex;
-  margin-left: 100px;
-  justify-content: center;
-  border-radius: 4px;
-  cursor: pointer;
-
-}
-.submit-button:hover{
-  background-color: rgb(1, 252, 168);
-  color:rgb(5, 5, 37);
-}
 
 
 .home{
@@ -116,6 +16,48 @@ display:block;
   color: green;
   margin-bottom: 10px;
 }
+@media (max-width: 600px) {
+  .success-message {
+    margin-bottom: 10px;
+    padding:4px;
+  }
+
+  .home{
+    display:block;
+    padding:20px;
+    font-size:20px;
+    margin-left:10px;
+  }
+  .Entry{
+    display: block;
+    font-size:30px;
+    margin:0 ;
+    width:100%;
+  }
+
+
+  
+  #visitorButton,#userButton {
+font-size: 24px;
+  }
+
+  /* Styling for Exit buttons */
+  #exitWithVehicleButton {
+font-size: 24px;
+
+  }
+  #exitWithVehicleButton:hover{
+    background-color: rgb(107, 241, 152);
+    color: black;
+    text-decoration: none;
+  }
+  #exitWithoutVehicleButton{
+  text-decoration: none;
+    font-size: 24px;
+  }
+  
+
+} 
 
 .error-message {
   color: red;
@@ -177,6 +119,7 @@ display:block;
   margin-right:20px;
   padding:8px;
   border-radius: 10px;
+  text-decoration: none;
 }
 .buttoninn{ margin-right:10px;
   padding:8px;
@@ -213,6 +156,7 @@ margin-left: 30px;
   color:white;
   font-weight: bold;
   transition:0.3ms;
+  text-decoration: none;
 }
 #userButton{
   background-color: rgb(8, 100, 8);
@@ -220,8 +164,10 @@ margin-left: 30px;
   color:white;
   font-weight:bold;
   transition: 0.3ms;
+  text-decoration: none;
 }
 #visitorButton:hover{
+  text-decoration: none;
   background-color: rgb(162, 240, 214);
   color:rgb(36, 30, 31);
 }
@@ -235,11 +181,13 @@ margin-left: 30px;
   color:white;
   font-weight: bold;
   transition: 0.15s;
+  text-decoration: none;
   opacity: 0.9;
 }
 #exitWithVehicleButton:hover{
   background-color: rgb(107, 241, 152);
   color: black;
+  text-decoration: none;
 }
 #exitWithoutVehicleButton{
   font-weight: bold;
@@ -247,6 +195,7 @@ margin-left: 30px;
   background-color:purple;
   opacity:0.9;
   transition: 0.15s;
+  text-decoration: none;
 }
 
 #exitWithoutVehicleButton:hover {
@@ -281,117 +230,210 @@ margin-left: 30px;
   height: 200px;
 }
 
-label[for="other_purpose"] {
-  font-weight: bold;
-  margin-top: 2px;
+body{
+  background:white;
 }
-label[for="purpose"]{
-  font-weight:bold;
-}
-
-#purpose {
+.nav{
+  display:flex;
   
-  width: 350px;
-  color:black;
-  padding: 4px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  width:100%;
+  font-size:16px;
+  font-weight:600px;
+}
+nav  a{
+
+  font-size:20px;
+  text-decoration:none;
+  border-radius: 2px;
+}
+nav ul{
+
+
+  padding:4px;
 }
 .container{
-  
-  width: 600px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  width:100%;
 }
-
 .form-container{
-  
-  display: block;
-  
+  align-items:center;
+  display:block;
+  font-size:30px;
+  border-radius: 4px;
 }
 .form-group{
+  width: 100%;
+}
+.form-container label{
+  color:black;
+  font-size:20px;
+  display:flex;
+  font-weight:bold;
+  margin-bottom: 0;
+  padding: 10px;
+}
+input[type="text"],
+input[type="number"]{
+  width:calc(100% - 60px);
+  padding:10px;
+  border: 1px solid rgb(1, 7, 1);
+  border-radius: 4px;
+  font-size:20px;
+}
+#purpose{
+  width:calc(100% - 40px);
+  padding:10px;
+  border: 1px solid rgb(1, 7, 1);
+  border-radius: 4px;
   
-  padding:4px;
+  font-size:20px;
+}
+.camera{
+ margin-top:10px;  
+ margin-bottom:10px; 
+ width:100%;
+}
+.sub{
+  font-size:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:20px;
+  margin-bottom:0;
+}
+input[type="submit"]{
+  background-color: green;
+color:white;
+font-size:26px;
+justify-content: center;
+border-radius: 15px;
+padding:6px;
+cursor: pointer;
 }
 #startCameraButton{
   background-color: black;
   color:white;
-  border-radius: 4px;
+  font-size:20px;
+  border-radius:5px;
+  margin-left:20px;
 }
 #videoFeed{
-  width:300px;
+  width: calc(100% - 60px);
   border-radius: 20px;
-  margin-left:10px;
-  margin-top:10px;
+  margin:20px;
+  padding:10px;
+  border: 2px rebeccapurple;
 }
-
-#frontImage{
-  width:300px;
-  border-radius: 20px;
-  margin-left:10px;
-  margin-top:10px;
-}
-
-.submit-btn{
-  background-color: #59a309;
-  color:white;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
 #captureFrontButton{
   background-color: blue;
   color:white;
-  margin-left: 20px;
-}
-#deleteFrontButton {
-   background-color:red;
-   color:white;
-   margin-left:20px;
-   margin-top:10px;
-}
+  border-radius: 2px;
+  padding:10px;
+  font-size:16px;
+  justify-content: center;
+  align-items: center;
+  margin-left:100px;
+  margin-top:0;
+  margin-bottom:5px;
 
+}
+#canvas{
+  width: calc(100% - 60px);
+  border-radius: 20px;
+  margin:20px;
+  padding:10px;
+  border: 2px rebeccapurple;
+}
+#frontImage{
+  width:calc(100% - 60px);
+  border-radius:10px;
+  margin:10px;
+}
+#deleteFrontButton{
+  background-color: red;
+  color:white;
+  border-radius: 2px;
+  padding:10px;
+  font-size:16px;
+  justify-content: center;
+  align-items: center;
+  margin-left:100px;
+  margin-top:0;
+  margin-bottom:5px;
 
+}
 #startCameraButton1,#startCameraButton2{
   background-color: black;
   color:white;
+  font-size:20px;
   border-radius:5px;
-
+  margin-left:20px;
 }
 
+#videoFeed1,#videoFeed2{
+  width: calc(100% - 60px);
+  border-radius: 20px;
+  margin:20px;
+  padding:10px;
+  border: 2px rebeccapurple;
+}
 #captureFrontButton1,
-#captureFrontButton2{
+  #captureFrontButton2{
   background-color: blue;
   color:white;
-  margin-top:10px;
-  margin-left:20px;
-  border-radius: 5px;
-}
-#deleteFrontButton1,
-#deleteFrontButton2{
-  background-color: red;
-  color:white;
-  margin-top:10px;
-  margin-left:20px;
-border-radius: 5px;
-}
-#videoFeed1,#videoFeed2{
-  width:350px;
-  margin-top:10px;
-  border-radius: 10px;
+  border-radius: 2px;
+  padding:10px;
+  font-size:16px;
+  justify-content: center;
+  align-items: center;
+  margin-left:100px;
+  margin-top:0;
+  margin-bottom:5px;
 }
 #canvas1,#canvas2{
-  border-radius: 10px;
-
+  width: calc(100% - 60px);
+  border-radius: 20px;
+  margin:20px;
+  padding:10px;
+  border: 2px rebeccapurple;
 }
 #frontImage1,
-#frontImage2{
-  width:350px;
-  margin-top:10px;
-  border-radius: 10px;
+  #frontImage2{
+  width:calc(100% - 60px);
+  border-radius:10px;
+  margin:10px;
+}
+#deleteFrontButton1,#deleteFrontButton2{
+  background-color: red;
+  color:white;
+  border-radius: 2px;
+  padding:10px;
+  font-size:16px;
+  justify-content: center;
+  align-items: center;
+  margin-left:100px;
+  margin-top:0;
+  margin-bottom:5px;    
+}
+
+@media only screen and (min-width:1000px){
+  .form-container{
+      width:calc(100% - 800px);
+      display: block;
+      justify-content: center;
+      align-items: center;
+      margin:0 auto;
+  }
+  #videoFeed1,#videoFeed2{
+      width: 100%;
+      border-radius: 20px;
+      padding:10px;
+      border: 2px rebeccapurple;
+  }
+
+  #frontImage1,
+  #frontImage2{
+  width:calc(100% - 60px);
+  border-radius:10px;
+  margin:10px;
+}      
 }
